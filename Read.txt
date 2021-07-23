@@ -1,0 +1,70 @@
+5478
+
+7.12
+Fast ,Fater R-CNN  ㅇㅇ..?
+Pytorch - 신경망까지 학습
+
+7.13
+pytorch 강의  ~  lecture 4까지  점심 전!!
+책반납하기
+seq2seq, roi 찾기 -> 못함 ..
+
+7.14
+pytorch 강의 ~7까지 
+ppt 준비
+rnn, lstm
+
+7.16
+pytorch 강의 ~
+lstm
+~~점심~~
+코드 visual comet .. 모르겠다... ~~
+visual-causality헤성ㄱ끝까지!ㅍ 호호....
+
+7.17
+논문 이해. -> 돌려보기
+
+7.19
+pytorch 강의 듣기만허면 잠이 온다 ㅠ...
+attention!!!
+논문 이해 다하기.!!!!!!! -> 흐름 파악! 호호
+
+7.23
+feature resnet 사용
+epoch 돌리고 print...
+아래 내용 ㅇ하가!!
+viscause 논문 분석 내용
+for문에서 testing 부분을 따로 분리하기 : save -> load
+prediction 부분을 따로 분리해서 print해서 문장 내용 보고 어떤 것을 positive라고 했는지 확인
+cross attention 수식에서 각 변수 의미 (w로 object를 문장에서 중요도를 뭐 다시 계사ㅏㄴ했다.. ㄴ이런 느낌/..?)
+e2의 개수가 얼만큼 될까? pair의 개수가 나와있지만 각각의 개수를 파악해볼 것
+cross attention 수식이 코드상 내용과 동일할 까? ,곱이 있는데 그 두 벡터의 차원이 동일할까?
+attention 계산 법도 대충 알아야한다..!
+
+~ 7.22 발표 후 점검 ->  다음 주 회의 7.29 1시30분  
+데이터 이벤트 2 내용 확인
+positive  개수 확인 및 print
+resntet 사용
+accracy / precision/ recall 중 accuracy 사용안되는 이유
+
+
+====================
+발표내용
+지난번 데이터 자세히 설명
+오류 부분 설명
+학습한 내용 설명
+새로 받은 논문 concept 설명
+
+
+발표 점검
+visual featur 사이즈 
+bbox 물체  모두 사용하는지
+before after 주석이 포함하는 시간 범위
+주석에 해당하는 이미지를 가져와서 보여주기
+task 두가지 중 이미지만 주어지는 경우 확실하게..
+lstm 구조~
+기울기 소실.. 문제점 뭐냐~
+입력에 대해서 without visual context 의미 뭐냐
+결과 알아와라...
+논문의 인용횟수, 어디서 가져온 것인지, 논문 fullnameemddmfh 발표 시작하기위해 준비하기
+결과 단위 나 정규화한 방법. 결과 측정 방법 등을 같이 알아보기.
