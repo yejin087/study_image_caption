@@ -13,8 +13,8 @@ import random
 from tqdm import tqdm
 
 class DataLoader:
-  def __init__(self,device,k):
-    self.k = k
+  def __init__(self,device):
+    self.k = 10
     self.dataset_path = 'Contextual_dataset.json'
     self.glove_path = 'glove.txt'        
     self.word_embeddings = self.load_embedding_dict(self.glove_path) # glove path

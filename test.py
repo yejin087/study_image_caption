@@ -16,6 +16,7 @@ def test(model, data):
       prediction_dict['video_'+str(video)] = dict()
       for image in range(4):
           prediction_dict['video_'+str(video)]['image_'+str(image)] = dict()
+          
   gt_positive_example = 0
   pred_positive_example = dict()
   
@@ -45,20 +46,22 @@ def test(model, data):
       prediction_dict['video_' + str(tmp_example['video_id'])]['image_' + str(tmp_example['image_id'])][tmp_example['event_key']].append(tmp_one_result)
   
       if tmp_example['label'].data[0] == 1:
-          #print('truth example {} \n'.format(tmp_example))
+          print('positive example event_1 : {tmp_example['event_1']} , event_2 : {tmp_example['event_2']} \n')
           gt_positive_example += 1
-  
+    
+    print('positive example amount {gt_positive_example} \n')
+    
   for video in range(100):
       for image in range(4):
           current_predict = prediction_dict['video_'+str(video)]['image_'+str(image)]
           for key in current_predict:
               current_predict[key] = sorted(current_predict[key], key=lambda x: (x.get('True_score', 0)), reverse=True)
-              #print('current preditct key : {}'.format(current_predict[key]))
+              #print('current preditct key : {}'.format(current_predict))
               for top_k in recall_list:
                   tmp_top_predict = current_predict[key][:top_k]
                   for tmp_example in tmp_top_predict:
                       if tmp_example['label'] == 1:
-                          #print('pred example {} \n'.format(tmp_example))
+                          print('pred positive example {tmp_example['event_1']} $$ {tmp_example['event_2'] \n')
                           pred_positive_example['top' + str(top_k)] += 1
   
   recall_result = dict()

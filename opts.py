@@ -17,8 +17,9 @@ parser.add_argument("--test_by_type", default=False, required=False,
                     help="Evaluate the model by types (i.e., Sports, Socializing, Household, Personal Care, Eating)")
 parser.add_argument("--val", default=False, required=False,
                     help="Evaluate the model")
-parser.add_argument("--tes", default=False, required=False,
+parser.add_argument("--test", default=False, required=False,
                     help="test the model")
 
 args = parser.parse_args()
-  
+
+ 

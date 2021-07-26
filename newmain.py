@@ -37,9 +37,7 @@ def train(model, data, learning_rate):
     
     train_loss_list.append(loss.item())
     all_loss += loss.item()
-  
-  #print('[train] current loss list:', train_loss_list)    
-  #print('[train] loss avg:', all_loss / len(data))
+
   return  all_loss / len(data)
 
 def eval(model, data, learning_rate):
@@ -68,7 +66,7 @@ def eval(model, data, learning_rate):
           final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
                       resnet_representation=tmp_example['resnet_representation'])
       else:
-     """
+    """
     final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
                     entities=tmp_example['entities'])
 
