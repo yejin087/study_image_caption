@@ -28,8 +28,13 @@ def train(model, data, learning_rate):
   model.train()
   
   for tmp_example in tqdm(data):
-    final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
-                  entities=tmp_example['entities'])      
+    if args.model == 'ResNetAsContext':
+        final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
+                    resnet_representation=tmp_example['resnet_representation'])
+    else:
+        final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
+                    entities=tmp_example['entities'])
+    
     loss = loss_func(final_prediction, tmp_example['label'])
     test_optimizer.zero_grad()
     loss.backward()
@@ -61,7 +66,11 @@ def eval(model, data, learning_rate):
   
   
   for tmp_example in data:
-    final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
+    if args.model == 'ResNetAsContext':
+            final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
+                        resnet_representation=tmp_example['resnet_representation'])
+    else:
+        final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
                     entities=tmp_example['entities'])
 
     softmax_prediction = F.softmax(final_prediction, dim = 1)
