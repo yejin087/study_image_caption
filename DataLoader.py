@@ -13,8 +13,8 @@ import random
 from tqdm import tqdm
 
 class DataLoader:
-  def __init__(self,device):
-    self.k = 10
+  def __init__(self,device,k):
+    self.k = k
     self.dataset_path = 'Contextual_dataset.json'
     self.glove_path = 'glove.txt'        
     self.word_embeddings = self.load_embedding_dict(self.glove_path) # glove path
@@ -155,7 +155,9 @@ class DataLoader:
                                                         'category': category,
                                                         'video_id': video_id,
                                                         'image_id': image_id,
-                                                        'event_key': event_1}) # cause event String
+                                                        'event_key': event_1, # cause event in String
+                                                        'txt2': event_2, 
+                                                        }) 
 
     return tensorized_examples_for_one_frame
   

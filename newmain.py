@@ -61,12 +61,6 @@ def eval(model, data, learning_rate):
   
   
   for tmp_example in data:
-    """
-      if args.model == 'ResNetAsContext':
-          final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
-                      resnet_representation=tmp_example['resnet_representation'])
-      else:
-    """
     final_prediction = model(event_1=tmp_example['bert_event_1'], event_2=tmp_example['bert_event_2'],
                     entities=tmp_example['entities'])
 
@@ -82,7 +76,6 @@ def eval(model, data, learning_rate):
     prediction_dict['video_' + str(tmp_example['video_id'])]['image_' + str(tmp_example['image_id'])][tmp_example['event_key']].append(tmp_one_result)
 
     if tmp_example['label'].data[0] == 1:
-        #print('truth example {} \n'.format(tmp_example))
         gt_positive_example += 1
   
   for video in range(100):
@@ -90,19 +83,16 @@ def eval(model, data, learning_rate):
           current_predict = prediction_dict['video_'+str(video)]['image_'+str(image)]
           for key in current_predict:
               current_predict[key] = sorted(current_predict[key], key=lambda x: (x.get('True_score', 0)), reverse=True)
-              #print('current preditct key : {}'.format(current_predict[key]))
               for top_k in recall_list:
                   tmp_top_predict = current_predict[key][:top_k]
                   for tmp_example in tmp_top_predict:
                       if tmp_example['label'] == 1:
-                          #print('pred example {} \n'.format(tmp_example))
                           pred_positive_example['top' + str(top_k)] += 1
   
   recall_result = dict()
   for top_k in recall_list:
       recall_result['Recall_' + str(top_k)] = pred_positive_example['top' + str(top_k)] / gt_positive_example
   
-  # return correct_count / len(data)
   return recall_result
 
 
@@ -157,26 +147,26 @@ def main():
   train_data = all_data.load_train()  
   dev_data = all_data.load_dev()
   
-  for i in range(10):
+  for i in range(300):
     print('##Iteration:', i+1, '|', 'Current best performance:', final_performance)
     train_loss_avg = train(current_model, train_data, args.lr)
-    print(f'[{i}/ train loss] : {train_loss_avg}')
+    print(f'[{i}/ train loss] : {train_loss_avg} \n')
   
   print('\nfinish train.')
   
-  if args.val:
-    dev_performance = eval(current_model, dev_data, args.lr)
-    print('Dev accuracy:', dev_performance)
-  
-    for top_k in [1, 2, 3, 5, 10]:
-        if dev_performance['Recall_' + str(top_k)] > best_dev_performance['Recall_' + str(top_k)]:
-            print('Recall@'+str(top_k)+': New best performance!!!')
-            best_dev_performance['Recall_' + str(top_k)] = dev_performance['Recall_' + str(top_k)]
-            print('Recall@' + str(top_k) + ': We are saving the new best model!')
-            torch.save(current_model.state_dict(), 'models/' + 'Recall' + str(top_k) + '_' + args.model + '.pth')
-            
+                #if args.val:
+  dev_performance = eval(current_model, dev_data, args.lr)
+  print('Dev accuracy:', dev_performance)
+
+  for top_k in [1, 2, 3, 5, 10]:
+    if dev_performance['Recall_' + str(top_k)] > best_dev_performance['Recall_' + str(top_k)]:
+        #print('Recall@'+str(top_k)+': New best performance!!!')
+        best_dev_performance['Recall_' + str(top_k)] = dev_performance['Recall_' + str(top_k)]
+        #print('Recall@' + str(top_k) + ': We are saving the new best model!')
+        torch.save(current_model.state_dict(), 'models/' + 'Recall' + str(top_k) + '_' + args.model + '.pth')
+        
     print('\nfinish evalutation.')
-  
+
   
 if __name__ == '__main__' :
   main() 
