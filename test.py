@@ -52,7 +52,7 @@ def test(model, data):
           current_predict = prediction_dict['video_'+str(video)]['image_'+str(image)]
           for key in current_predict:
             current_predict[key] = sorted(current_predict[key], key=lambda x: (x.get('True_score', 0)), reverse=True)
-            for top_k in recall_list:
+            for top_k in recall_list: 
                 tmp_top_predict = current_predict[key][:top_k]
                 for tmp_example in tmp_top_predict:
                     if tmp_example['label'] == 1:
@@ -66,7 +66,9 @@ def test(model, data):
     return recall_result
     
   
-def test_by_type(model, data, recall_k):
+def test_by_type(model, data):
+    
+    recall_list = [1, 2, 3, 5, 10]
     correct_count = dict()
     all_count = dict()
     correct_count['overall'] = 0
@@ -104,27 +106,25 @@ def test_by_type(model, data, recall_k):
 
       if tmp_example['event_key'] not in prediction_dict['video_' + str(tmp_example['video_id'])][
           'image_' + str(tmp_example['image_id'])].keys():
-          prediction_dict['video_' + str(tmp_example['video_id'])]['image_' + str(tmp_example['image_id'])][
-              tmp_example['event_key']] = list()
-      prediction_dict['video_' + str(tmp_example['video_id'])]['image_' + str(tmp_example['image_id'])][
-          tmp_example['event_key']].append(tmp_one_result)
+          prediction_dict['video_' + str(tmp_example['video_id'])]['image_' + str(tmp_example['image_id'])][tmp_example['event_key']] = list()
+      prediction_dict['video_' + str(tmp_example['video_id'])]['image_' + str(tmp_example['image_id'])][tmp_example['event_key']].append(tmp_one_result)
 
       if tmp_example['label'].data[0] == 1:
-          all_count['overall'] += 1
-          all_count[tmp_example['category']] += 1
+          all_count['overall'] += 1 # sum of gt amount 
+          all_count[tmp_example['category']] += 1 # sum of gt amount by category
 
     for video in range(100):
       for image in range(4):
           current_predict = prediction_dict['video_' + str(video)]['image_' + str(image)]
           for key in current_predict:
-              current_predict[key] = sorted(current_predict[key], key=lambda x: (x.get('True_score', 0)),
-                                            reverse=True)
+              current_predict[key] = sorted(current_predict[key], key=lambda x: (x.get('True_score', 0)),reverse=True)
               # print(current_predict[key])
-              tmp_top_predict = current_predict[key][:recall_k]
-              for tmp_example in tmp_top_predict:
-                  if tmp_example['label'] == 1:
-                      correct_count[tmp_example['category']] += 1
-                      correct_count['overall'] += 1
+              for top_k in recall_list:
+                  tmp_top_predict = current_predict[key][:top_k]
+                  for tmp_example in tmp_top_predict:
+                      if tmp_example['label'] == 1:
+                          correct_count[tmp_example['category']] += 1
+                          correct_count['overall'] += 1
 
     accuracy_by_type = dict()
     for tmp_category in all_count:

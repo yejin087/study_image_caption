@@ -145,19 +145,44 @@ class DataLoader:
               
               bert_tokenized_event_1 = self.tokenizer.encode('[CLS] ' + event_1 + ' . [SEP]')
               bert_tokenized_event_2 = self.tokenizer.encode('[CLS] ' + event_2 + ' . [SEP]')
+            if args.model == 'ResNetAsContext':
+                    image_one_vector = numpy.array(image_one['vector'])
+                    image_two_vector = numpy.array(image_two['vector'])
+                    overall_representation = image_one_vector + image_two_vector
+                    overall_representation /= 2
+                    resnet_representation = torch.tensor(overall_representation).type(torch.float32).to(device)
+                bert_tokenized_event_1 = tokenizer.encode('[CLS] ' + event_1 + ' . [SEP]')
+                bert_tokenized_event_2 = tokenizer.encode('[CLS] ' + event_2 + ' . [SEP]')
 
-              tensorized_examples_for_one_frame.append({'event_1': tensorized_event_1,
-                                                        'event_2': tensorized_event_2,
-                                                        'bert_event_1': torch.tensor(bert_tokenized_event_1).to(self.device),
-                                                        'bert_event_2': torch.tensor(bert_tokenized_event_2).to(self.device),
-                                                        'entities': tensorized_entities,
-                                                        'label': torch.tensor([tmp_event_pair[1]]).to(self.device),
-                                                        'category': category,
-                                                        'video_id': video_id,
-                                                        'image_id': image_id,
-                                                        'event_key': event_1, # cause event in String
-                                                        'txt2': event_2, 
-                                                        }) 
+                if args.model == 'ResNetAsContext':
+                    tensorized_examples_for_one_frame.append({'event_1': tensorized_event_1,
+                                                              'event_2': tensorized_event_2,
+                                                              'bert_event_1': torch.tensor(bert_tokenized_event_1).to(
+                                                                  device),
+                                                              'bert_event_2': torch.tensor(bert_tokenized_event_2).to(
+                                                                  device),
+                                                              'entities': tensorized_entities,
+                                                              'label': torch.tensor([tmp_event_pair[1]]).to(device),
+                                                              'resnet_representation': resnet_representation,
+                                                              'category': category,
+                                                              'video_id': video_id,
+                                                              'image_id': image_id,
+                                                              'event_key': event_1,
+                                                              'txt2': event_2 
+                                                              })
+                else:
+                  tensorized_examples_for_one_frame.append({'event_1': tensorized_event_1,
+                                                            'event_2': tensorized_event_2,
+                                                            'bert_event_1': torch.tensor(bert_tokenized_event_1).to(self.device),
+                                                            'bert_event_2': torch.tensor(bert_tokenized_event_2).to(self.device),
+                                                            'entities': tensorized_entities,
+                                                            'label': torch.tensor([tmp_event_pair[1]]).to(self.device),
+                                                            'category': category,
+                                                            'video_id': video_id,
+                                                            'image_id': image_id,
+                                                            'event_key': event_1, # cause event in String
+                                                            'txt2': event_2 
+                                                            }) 
 
     return tensorized_examples_for_one_frame
   
@@ -215,17 +240,42 @@ class DataLoader:
                 bert_tokenized_event_1 = self.tokenizer.encode('[CLS] ' + event_1 + ' . [SEP]')
                 bert_tokenized_event_2 = self.tokenizer.encode('[CLS] ' + event_2 + ' . [SEP]')
               
-                tensorized_examples_for_one_frame.append({'event_1':tensorized_event_1,
-                                                          'event_2':tensorized_event_2,
-                                                          'bert_event_1': torch.tensor(bert_tokenized_event_1).to(self.device),
-                                                          'bert_event_2': torch.tensor(bert_tokenized_event_2).to(self.device),
-                                                          'entities': tensorized_entities,
-                                                          'label': torch.tensor([tmp_event_pair[1]]).to(self.device),
-                                                          'category': category,
-                                                          'video_id': video_id,
-                                                          'image_id': image_id,
-                                                          'event_key': event_1
-                                                          })
+                if args.model == 'ResNetAsContext':
+                        image_one_vector = numpy.array(image_one['vector'])
+                        image_two_vector = numpy.array(image_two['vector'])
+                        overall_representation = image_one_vector + image_two_vector
+                        overall_representation /= 2
+                        resnet_representation = torch.tensor(overall_representation).type(torch.float32).to(device)
+                    bert_tokenized_event_1 = tokenizer.encode('[CLS] ' + event_1 + ' . [SEP]')
+                    bert_tokenized_event_2 = tokenizer.encode('[CLS] ' + event_2 + ' . [SEP]')
+
+                    if args.model == 'ResNetAsContext':
+                        tensorized_examples_for_one_frame.append({'event_1': tensorized_event_1,
+                                                                  'event_2': tensorized_event_2,
+                                                                  'bert_event_1': torch.tensor(bert_tokenized_event_1).to(
+                                                                      device),
+                                                                  'bert_event_2': torch.tensor(bert_tokenized_event_2).to(
+                                                                      device),
+                                                                  'entities': tensorized_entities,
+                                                                  'label': torch.tensor([tmp_event_pair[1]]).to(device),
+                                                                  'resnet_representation': resnet_representation,
+                                                                  'category': category,
+                                                                  'video_id': video_id,
+                                                                  'image_id': image_id,
+                                                                  'event_key': event_1})
+                    else:
+                        tensorized_examples_for_one_frame.append({'event_1': tensorized_event_1,
+                                                                  'event_2': tensorized_event_2,
+                                                                  'bert_event_1': torch.tensor(bert_tokenized_event_1).to(
+                                                                      device),
+                                                                  'bert_event_2': torch.tensor(bert_tokenized_event_2).to(
+                                                                      device),
+                                                                  'entities': tensorized_entities,
+                                                                  'label': torch.tensor([tmp_event_pair[1]]).to(device),
+                                                                  'category': category,
+                                                                  'video_id': video_id,
+                                                                  'image_id': image_id,
+                                                                  'event_key': event_1})
     
     
     return tensorized_examples_for_one_frame
