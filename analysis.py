@@ -30,13 +30,11 @@ def get_candi_event(img_val):
   positive_list.extend(negative_list) # add negative in candidate list 
   
   candidate_list = positive_list
-  print('candi_list', candidate_list )
   
-  return candidate_list
+  for tmp_event_pair in candidate_list:
+    event_1 = tmp_event_pair[0].split('$$')[0]
+    event_2 = tmp_event_pair[0].split('$$')[1]
 
-for tmp_event_pair in candidate_list:
-            event_1 = tmp_event_pair[0].split('$$')[0]
-            event_2 = tmp_event_pair[0].split('$$')[1]
          
 if __name__ == '__main__' :
   dataset_path = './data/Contextual_dataset.json'
