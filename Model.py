@@ -93,8 +93,8 @@ class ResNetAsContext(BertModel):
         event_1_representation = torch.mean(event_1_representation, dim=1)
         event_2_representation, _ = self.bert(event_2.unsqueeze(0))
         event_2_representation = torch.mean(event_2_representation, dim=1)
-
-        overall_representation = torch.cat([event_1_representation, event_2_representation, self.compress(resnet_representation.unsqueeze(0))], dim=1)
+        print(event_1_representation.size(), event_2_representation.size(), self.compress(resnet_representation).size())
+        overall_representation = torch.cat([event_1_representation, event_2_representation, self.compress(resnet_representation)], dim=1)
 
 
         prediction = self.last_layer(self.second_last_layer(overall_representation))
@@ -122,12 +122,12 @@ class BERTCausal(BertModel):
         number_of_words = eventuality_representation.size(0)
         number_of_objects = entity_representations.size(0)
         event_raw_representation = torch.mean(eventuality_representation, dim=0)  # 768
-
+        #print('nw',number_of_words,'nd', number_of_objects,'eraw' ,event_raw_representation.size())
         event_raw_representation = event_raw_representation.repeat(number_of_objects, 1)  # 10*768
 
         event_attention = self.attention_to_entity(
             torch.cat([event_raw_representation, entity_representations], dim=1))  # 10 * 1
-
+        print(torch.cat([event_raw_representation, entity_representations], dim=1).size())
         context_representation = torch.mean(entity_representations * event_attention.repeat(1, self.embedding_size),
                                             dim=0)  # 1 * 300
 

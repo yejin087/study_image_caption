@@ -9,8 +9,9 @@ from torchvision import models, transforms
 import torch.nn as nn
 import shutil
 import pandas as pd
+import pickle
 
-data_dir = './data/images/testing'
+data_dir = './data/images/vaildation'
 features_dir = './feature'
 
 def extractor(img_path, net, use_gpu):
@@ -48,7 +49,7 @@ if __name__ == '__main__':
         full_filename = os.path.join(os.getcwd(),data_dir[2:], filename)
         ext = os.path.splitext(full_filename)[-1]
         if ext == '.jpg': 
-            print(full_filename)
+            #print(full_filename)
             abs_list.append(full_filename)
     
     # select resnet layer you want to extract feature values
@@ -61,16 +62,19 @@ if __name__ == '__main__':
      
     use_gpu = torch.cuda.is_available()
 
+    featuer_dict = dict()
     # set the each file name to extract function 
     # save the image name and feature pair in dataframe 
     for x_path in abs_list:
         file_name = x_path.split('/')[-1]
         #fx_path = os.path.join(features_dir, file_name + '.txt')
         feature_val = extractor(x_path, model, use_gpu)
-        featuer_dict = dict()
-        featuer_dict[file_name] = feature_val
+        featuer_dict[file_name] = feature_val.cpu().numpy()
         print(featuer_dict)
         
-    df = pd.DataFrame(featuer_dict, columns = ['imageFileName' , 'extractedFeatures'])
-    df.to_pickle('test_featuer.pkl')   
+    #df = pd.DataFrame(list(featuer_dict.items()), columns = ['imageFileName' , 'extractedFeatures'])
+    #df.to_pickle('./feature/test_feature.pkl')   
+    # Store data (serialize)
+    with open('./feature/val_feature.pkl', 'wb') as handle:
+      pickle.dump(featuer_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
     print('done extracting')
