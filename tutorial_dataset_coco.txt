@@ -1,0 +1,124 @@
+{"images":
+
+ [{"filepath": "val2014",
+ "sentids": [770337, 771687, 772707, 776154, 781998], 
+ "filename": "COCO_val2014_000000391895.jpg", 
+ "imgid": 0, 
+ "split": "test", 
+ "sentences": 
+ [{"tokens": ["a", "man", "with", "a", "red", "helmet", "on", "a", "small", "moped", "on", "a", "dirt", "road"],
+ "raw": "A man with a red helmet on a small moped on a dirt road. ", 
+ "imgid": 0, 
+ "sentid":770337}, 
+ {"tokens": ["man", "riding", "a", "motor", "bike", "on", "a", "dirt", "road", "on", "the", "countryside"],
+ "raw": "Man riding a motor bike on a dirt road on the countryside.", 
+ "imgid": 0, 
+ "sentid": 771687}, 
+ {"tokens": ["a", "man", "riding", "on", "the", "back", "of", "a", "motorcycle"], 
+ "raw": "A man riding on the back of a motorcycle.", 
+ "imgid": 0, 
+ "sentid": 772707}, 
+ {"tokens": ["a", "dirt", "path", "with", "a", "young", "person", "on", "a", "motor", "bike", "rests", "to", "the", "foreground", "of", "a", "verdant", "area", "with", "a", "bridge", "and", "a", "background", "of", "cloud", "wreathed", "mountains"], 
+ "raw": "A dirt path with a young person on a motor bike rests to the foreground of a verdant area with a bridge and a background of cloud-wreathed mountains. ", 
+ "imgid": 0, 
+ "sentid": 776154}, 
+ {"tokens": ["a", "man", "in", "a", "red", "shirt", "and", "a", "red", "hat", "is", "on", "a", "motorcycle", "on", "a", "hill", "side"], 
+ "raw": "A man in a red shirt and a red hat is on amotorcycle on a hill side.", 
+ "imgid": 0,
+ "sentid": 781998}], 
+ "cocoid": 391895}, 
+ 
+ 
+ {"filepath": "val2014", 
+ "sentids": [681330, 686718, 688839, 693159, 693204], 
+ "filename": "COCO_val2014_000000522418.jpg", 
+ "imgid": 1, 
+ "split":  "restval", 
+ "sentences": [{"tokens": ["a", "woman", "wearing", "a", "net", "on", "her", "head", "cutting", "a", "cake"], 
+ "raw": "A woman wearing a net on her head cutting a cake. ", 
+ "imgid": 1, 
+ "sentid": 681330}, 
+ {"tokens": ["a", "woman", "cutting", "a", "large", "white", "sheet","cake"], 
+ "raw": "A woman cutting a large white sheet cake.", 
+ "imgid": 1, "
+ sentid": 686718}, 
+ {"tokens": ["a", "woman", "wearing", "a", "hair", "net", "cutting", "a", "large", "sheet", "cake"], 
+ "raw": "A woman wearing a hair net cutting a large sheet cake.", 
+ "imgid": 1, 
+ "sentid": 688839}, 
+ {"tokens": ["there", "is", "a", "woman", "that", "is", "cutting", "a", "white", "cake"], 
+ "raw": "there is a woman that is cutting a white cake", 
+ "imgid": 1, 
+ "sentid": 693159}, 
+ {"tokens": ["a", "woman", "marking", "a", "cake", "with", "the", "back", "of", "a", "chefs", "knife"], 
+ "raw": "A woman marking a cake with the back of a chef's knife. ", 
+ "imgid": 1, 
+ "sentid": 693204}], 
+ "cocoid": 522418}, 
+ 
+ 
+ {"filepath": "val2014", 
+ "sentids": [474921, 479322, 479334, 481560, 483594], 
+ "filename": "COCO_val2014_000000184613.jpg", 
+ "imgid": 2, 
+ "split": "val",
+ "sentences": [{"tokens": ["a", "child", "holding", "a", "flowered", "umbrella", "and", "petting", "a", "yak"], 
+ "raw": "A child holding a flowered umbrella and petting a yak.", 
+ "imgid": 2, 
+ "sentid": 474921}, 
+ {"tokens": ["a", "young", "man", "holding", "an", "umbrella", "next", "to", "a", "herd", "of", "cattle"], 
+ "raw": "A young man holding an umbrella next to a herd of cattle.", 
+ "imgid": 2, "sentid": 479322}, 
+ {"tokens": ["a", "young", "boy", "barefoot", "holding", "an", "umbrella", "touching", "the", "horn", "of", "a", "cow"], 
+ "raw": "a young boy barefoot holding an umbrella touching the horn of a cow", 
+ "imgid": 2, 
+ "sentid": 479334}, 
+ {"tokens": ["a", "young", "boy", "with", "an", "umbrella", "who", "is", "touching", "the", "horn", "of", "a", "cow"], 
+ "raw": "A young boy with an umbrella who istouching the horn of a cow.", 
+ "imgid": 2, 
+ "sentid": 481560}, 
+ {"tokens": ["a", "boy", "holding", "an", "umbrella", "while", "standing", "next", "to", "livestock"], 
+ "raw": "A boy holding an umbrella while standing next to livestock.", 
+ "imgid": 2, 
+ "sentid": 483594}], 
+ "cocoid": 184613}, 
+ {"filepath": "val2014", 
+ "sentids": [721981, 728503, 730555, 731665, 734977], 
+ "filename": "COCO
+_val2014_000000318219.jpg", "imgid": 3, "split": "restval", "sentences": [{"tokens": ["a", "young", "boy", "standing", "in", "
+front", "of", "a", "computer", "keyboard"], "raw": "A young boy standing in front of a computer keyboard.", "imgid": 3, "senti
+d": 721981}, {"tokens": ["a", "little", "boy", "wearing", "headphones", "and", "looking", "at", "a", "computer", "monitor"], "
+raw": "a little boy wearing headphones and looking at a computer monitor", "imgid": 3, "sentid": 728503}, {"tokens": ["he", "i
+s", "listening", "intently", "to", "the", "computer", "at", "school"], "raw": "He is listening intently to the computer at sch
+ool.", "imgid": 3, "sentid": 730555}, {"tokens": ["a", "young", "boy", "stares", "up", "at", "the", "computer", "monitor"], "r
+aw": "A young boy stares up at the computer monitor.", "imgid": 3, "sentid": 731665}, {"tokens": ["a", "young", "kid", "with",
+ "head", "phones", "on", "using", "a", "computer"], "raw": "a young kid with head phones on using a computer ", "imgid": 3, "s
+entid": 734977}], "cocoid": 318219}, {"filepath": "val2014", "sentids": [28241, 34196, 35393, 40226, 44231], "filename": "COCO
+_val2014_000000554625.jpg", "imgid": 4, "split": "restval", "sentences": [{"tokens": ["a", "boy", "wearing", "headphones", "us
+ing", "one", "computer", "in", "a", "long", "row", "of", "computers"], "raw": "a boy wearing headphones using one computer in
+a long row of computers", "imgid": 4, "sentid": 28241}, {"tokens": ["a", "little", "boy", "with", "earphones", "on", "listenin
+g", "to", "something"], "raw": "A little boy with earphones on listening to something.", "imgid": 4, "sentid": 34196}, {"token
+s": ["a", "group", "of", "people", "sitting", "at", "desk", "using", "computers"], "raw": "A group of people sitting at desk u
+sing computers.", "imgid": 4, "sentid": 35393}, {"tokens": ["children", "sitting", "at", "computer", "stations", "on", "a", "l
+ong", "table"], "raw": "Children sitting at computer stations on a long table.", "imgid": 4, "sentid": 40226}, {"tokens": ["a"
+, "small", "child", "wearing", "headphones", "plays", "on", "the", "computer"], "raw": "A small child wearing headphones plays
+ on the computer.", "imgid": 4, "sentid": 44231}], "cocoid": 554625}, {"filepath": "val2014", "sentids": [370509, 370584, 3722
+52, 372765, 375891], "filename": "COCO_val2014_000000397133.jpg", "imgid": 5, "split": "restval", "sentences": [{"tokens": ["a
+", "man", "is", "in", "a", "kitchen", "making", "pizzas"], "raw": "A man is in a kitchen making pizzas.", "imgid": 5, "sentid"
+: 370509}, {"tokens": ["man", "in", "apron", "standing", "on", "front", "of", "oven", "with", "pans", "and", "bakeware"], "raw
+": "Man in apron standing on front of oven with pans and bakeware", "imgid": 5, "sentid": 370584}, {"tokens": ["a", "baker", "
+is", "working", "in", "the", "kitchen", "rolling", "dough"], "raw": "A baker is working in the kitchen rolling dough.", "imgid
+": 5, "sentid": 372252}, {"tokens": ["a", "person", "standing", "by", "a", "stove", "in", "a", "kitchen"], "raw": "A person st
+anding by a stove in a kitchen.", "imgid": 5, "sentid": 372765}, {"tokens": ["a", "table", "with", "pies", "being", "made", "a
+nd", "a", "person", "standing", "near", "a", "wall", "with", "pots", "and", "pans", "hanging", "on", "the", "wall"], "raw": "A
+ table with pies being made and a person standing near a wall with pots and pans hanging on the wall.", "imgid": 5, "sentid":
+375891}], "cocoid": 397133}, {"filepath": "val2014", "sentids": [561237, 562344, 564249, 564444, 564477], "filename": "COCO_va
+l2014_000000574769.jpg", "imgid": 6, "split": "restval", "sentences": [{"tokens": ["a", "woman", "in", "a", "room", "with", "a
+", "cat"], "raw": "A woman in a room with a cat.", "imgid": 6, "sentid": 561237}, {"tokens": ["a", "girl", "smiles", "as", "sh
+e", "holds", "a", "cat", "and", "wears", "a", "brightly", "colored", "skirt"], "raw": "A girl smiles as she holds a cat and we
+ars a brightly colored skirt.", "imgid": 6, "sentid": 562344}, {"tokens": ["a", "woman", "is", "holding", "a", "cat", "in", "h
+er", "kitchen"], "raw": "a woman is holding a cat in her kitchen", "imgid": 6, "sentid": 564249}, {"tokens": ["a", "woman", "i
+s", "working", "in", "a", "kitchen", "carrying", "a", "soft", "toy"], "raw": "A woman is working in a kitchen carrying a soft
+toy.", "imgid": 6, "sentid": 564444}, {"tokens": ["a", "woman", "is", "holding", "a", "cat", "in", "her", "kitchen"], "raw": "
+A woman is holding a cat in her kitchen.", "imgid": 6, "sentid": 564477}], "cocoid": 574769}, {"filepath": "val2014", "sentids
+": [152106, 158205, 160512, 161592, 162963], "filenam
