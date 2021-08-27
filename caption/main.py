@@ -35,6 +35,9 @@ from torchtext.vocab import Vectors, GloVe
 from scipy import misc
 from pytorch_pretrained_bert import BertTokenizer, BertModel
 import imageio
+import pandas as pd
+from pandas import DataFrame
+import time
 
 ###################
 # START Parameters
@@ -42,19 +45,16 @@ import imageio
 
 # hyperparams
 grad_clip = 5.
-num_epochs = 10
+num_epochs = 20
 batch_size = 32 
 decoder_lr = 0.0004
 
 # if both are false them model = baseline
 
-glove_model = False
-bert_model = True
+from_checkpoint = False
+train_model = True
+valid_model = False
 
-from_checkpoint = True
-train_model = False
-valid_model = True
-test_model = False
 ###################
 # END Parameters
 ###################
@@ -74,16 +74,6 @@ class loss_obj(object):
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Load pre-trained model tokenizer (vocabulary)
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-
-# Load pre-trained model (weights)
-BertModel = BertModel.from_pretrained('bert-base-uncased').to(device)
-BertModel.eval()
-
-# Load GloVe
-glove_vectors = pickle.load(open('glove.6B/glove_words.pkl', 'rb'))
-glove_vectors = torch.tensor(glove_vectors)
 
 #####################
 # Encoder RASNET CNN
@@ -106,19 +96,13 @@ class Encoder(nn.Module):
 ####################
 class Decoder(nn.Module):
 
-    def __init__(self, vocab_size, use_glove, use_bert):
+    def __init__(self, vocab_size):
         super(Decoder, self).__init__()
         self.encoder_dim = 2048
         self.attention_dim = 512
-        self.use_bert = use_bert
 
         # word embedding dimension
-        if use_glove:
-            self.embed_dim = 300
-        elif use_bert:
-            self.embed_dim = 768
-        else:
-            self.embed_dim = 512
+        self.embed_dim = 512
 
         self.decoder_dim = 512
         self.vocab_size = vocab_size
@@ -143,88 +127,35 @@ class Decoder(nn.Module):
         # init variables
         self.fc.bias.data.fill_(0)
         self.fc.weight.data.uniform_(-0.1, 0.1)
-        
-        if not use_bert:
-            self.embedding = nn.Embedding(vocab_size, self.embed_dim)
-            self.embedding.weight.data.uniform_(-0.1, 0.1)
-        
-            # always fine-tune embeddings (even with GloVe)
-            for p in self.embedding.parameters():
-                p.requires_grad = True
+
+        self.embedding = nn.Embedding(vocab_size, self.embed_dim)
+        self.embedding.weight.data.uniform_(-0.1, 0.1)
+    
+        # always fine-tune embeddings (even with GloVe)
+        for p in self.embedding.parameters():
+            p.requires_grad = True
 
     def forward(self, encoder_out, encoded_captions, caption_lengths):    
+    
         batch_size = encoder_out.size(0) # 32
         encoder_dim = encoder_out.size(-1) #2048
-        vocab_size = self.vocab_size # 8853
-        dec_len = [x-1 for x in caption_lengths] # caption end token 전까지 길이
-        max_dec_len = max(dec_len) # caption len 중 가장 긴 caption 길이
-
+        vocab_size = self.vocab_size # 8853 -> 8969
+        
         encoder_out = encoder_out.view(batch_size, -1, encoder_dim) # view 텐서의 크기를 ( 32,?, 2048) 로 변경
         #print(f'encoder out {encoder_out.shape}') (32,196,2048)
-        
         num_pixels = encoder_out.size(1)
         #print(f'num_pixels {num_pixels}') 196
-        
-        # load bert or regular embeddings
-        if not self.use_bert:
-            embeddings = self.embedding(encoded_captions)
-            # print(f' embedding shaep {embeddings.shape}') torch.Size([32,20/21/19/2,768]) , embedding size = 768
-        
        
-        elif self.use_bert:
-            embeddings = []
-            for cap_idx in  encoded_captions:
-                
-                # padd caption to correct size
-                while len(cap_idx) < max_dec_len:
-                    cap_idx.append(PAD)
-                    
-                cap = ' '.join([vocab.idx2word[word_idx.item()] for word_idx in cap_idx])
-                cap = u'[CLS] '+cap
-                
-                tokenized_cap = tokenizer.tokenize(cap)                
-                indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_cap)
-                tokens_tensor = torch.tensor([indexed_tokens]).to(device)
-
-                with torch.no_grad():
-                    encoded_layers, _ = BertModel(tokens_tensor)
-
-                bert_embedding = encoded_layers[11].squeeze(0)
-                
-                split_cap = cap.split()
-                tokens_embedding = []
-                j = 0
-
-                for full_token in split_cap:
-                    curr_token = ''
-                    x = 0
-                    for i,_ in enumerate(tokenized_cap[1:]): # disregard CLS
-                        token = tokenized_cap[i+j]
-                        piece_embedding = bert_embedding[i+j]
-                        
-                        # full token
-                        if token == full_token and curr_token == '' :
-                            tokens_embedding.append(piece_embedding)
-                            j += 1
-                            break
-                        else: # partial token
-                            x += 1
-                            
-                            if curr_token == '':
-                                tokens_embedding.append(piece_embedding)
-                                curr_token += token.replace('#', '')
-                            else:
-                                tokens_embedding[-1] = torch.add(tokens_embedding[-1], piece_embedding)
-                                curr_token += token.replace('#', '')
-                                
-                                if curr_token == full_token: # end of partial
-                                    j += x
-                                    break                            
-
-                cap_embedding = torch.stack(tokens_embedding)
-                embeddings.append(cap_embedding)
-  
-            embeddings = torch.stack(embeddings)
+        sort_ind = sorted( range(len(caption_lengths)), key=lambda k: caption_lengths[k], reverse=True)
+        encoder_out = encoder_out[sort_ind]
+        encoded_captions = encoded_captions[sort_ind]
+        
+        dec_len = [x-1 for x in caption_lengths] # caption end token 전까지 길이
+        max_dec_len = max(dec_len) # caption len 중 가장 긴 caption 길이
+        
+        # load regular embeddings
+        embeddings = self.embedding(encoded_captions)
+        # print(f' embedding shaep {embeddings.shape}') torch.Size([32,20/21/19/2,768]) , embedding size = 768
             
         # init hidden state
         avg_enc_out = encoder_out.mean(dim=1)
@@ -264,10 +195,10 @@ class Decoder(nn.Module):
 PAD = 0
 START = 1
 END = 2
-UNK = 3
+UNK = 3 # unknown words not exist in vocabulary
 
 # Load vocabulary
-with open('data/vocab.pkl', 'rb') as f:
+with open('./Cause_Caption/data/annotations/unique_vocab.pkl', 'rb') as f:
     vocab = pickle.load(f)
 
 # load data
@@ -286,17 +217,10 @@ if from_checkpoint:
     decoder = Decoder(vocab_size=len(vocab),use_glove=glove_model, use_bert=bert_model).to(device)
 
     if torch.cuda.is_available():
-        if bert_model:
-            print('Pre-Trained BERT Model')
-            #encoder_checkpoint = torch.load('./checkpoints/encoder_bert')
-            #decoder_checkpoint = torch.load('./checkpoints/decoder_bert')
-            encoder_checkpoint = torch.load('./checkpoints/encoder_epoch24')
-            decoder_checkpoint = torch.load('./checkpoints/decoder_epoch24')
-        else:
-            print('Pre-Trained Baseline Model')
-            encoder_checkpoint = torch.load('./checkpoints/encoder_baseline')
-            decoder_checkpoint = torch.load('./checkpoints/decoder_baseline')
- 
+        print('Pre-Trained Baseline Model')
+        encoder_checkpoint = torch.load('./checkpoints/causal/base/encoder_epoch6')
+        decoder_checkpoint = torch.load('./checkpoints/causal/base/decoder_epoch6')
+
     encoder.load_state_dict(encoder_checkpoint['model_state_dict'])
     decoder_optimizer = torch.optim.Adam(params=decoder.parameters(),lr=decoder_lr)
     decoder.load_state_dict(decoder_checkpoint['model_state_dict'])
@@ -304,7 +228,7 @@ if from_checkpoint:
     
 else:
     encoder = Encoder().to(device)
-    decoder = Decoder(vocab_size=len(vocab),use_glove=glove_model, use_bert=bert_model).to(device)
+    decoder = Decoder(vocab_size=len(vocab)).to(device)
     decoder_optimizer = torch.optim.Adam(params=decoder.parameters(),lr=decoder_lr)
 
 ###############
@@ -348,45 +272,22 @@ def train():
 
             losses.update(loss.item(), sum(decode_lengths))
 
-            # save model each 100 batches
-            if i%5000==0 and i!=0:
-                print('epoch '+str(epoch+1)+'/4 ,Batch '+str(i)+'/'+str(num_batches)+' loss:'+str(losses.avg))
+        if (epoch)%5==0:    
+            torch.save({
+                'epoch': (epoch),
+                'model_state_dict': decoder.state_dict(),
+                'optimizer_state_dict': decoder_optimizer.state_dict(),
+                'loss': loss,
+                }, './checkpoints/base_sort/decoder_epoch'+str(epoch))
+
+            torch.save({
+                'epoch': (epoch),
+                'model_state_dict': encoder.state_dict(),
+                'loss': loss,
+                }, './checkpoints/base_sort/encoder_epoch'+str(epoch))
+            print('epoch '+str(epoch)+'/', num_epochs,'Batch '+str(i)+'/'+str(num_batches)+' loss:'+str(losses.avg))
                 
-                 # adjust learning rate (create condition for this)
-                for param_group in decoder_optimizer.param_groups:
-                    param_group['lr'] = param_group['lr'] * 0.8
-
-                print('saving model...')
-
-                torch.save({
-                    'epoch': epoch,
-                    'model_state_dict': decoder.state_dict(),
-                    'optimizer_state_dict': decoder_optimizer.state_dict(),
-                    'loss': loss,
-                    }, './checkpoints/base/decoder_mid')
-
-                torch.save({
-                    'epoch': epoch,
-                    'model_state_dict': encoder.state_dict(),
-                    'loss': loss,
-                    }, './checkpoints/base/encode_mid')
-
-                print('model saved')
-
-        torch.save({
-            'epoch': epoch,
-            'model_state_dict': decoder.state_dict(),
-            'optimizer_state_dict': decoder_optimizer.state_dict(),
-            'loss': loss,
-            }, './checkpoints/base/decoder_epoch'+str(epoch+1))
-
-        torch.save({
-            'epoch': epoch,
-            'model_state_dict': encoder.state_dict(),
-            'loss': loss,
-            }, './checkpoints/base/encoder_epoch'+str(epoch+1))
-
-        print('epoch checkpoint saved')
+            print('epoch checkpoint saved')
 
     print("Completed training...")  
 
@@ -394,86 +295,71 @@ def train():
 # Validate model
 #################
 
-def print_sample(hypotheses, references, test_references,imgs, alphas, k, show_att, losses):
-  
-    for reference,hypothesis in zip(references, hypotheses):
-        #print(' ref m hypo ', reference, hypothesis)
-        bleu_1 = corpus_bleu([reference], [hypothesis], weights=(1, 0, 0, 0)) # weight : value of n ( n-gram)
-        #print("BLEU-1: "+str(bleu_1))
+def print_sample(hypotheses, references, test_references,imgs, alphas,losses):
+    
+    data = dict()
+    
+    for count , (reference,hypothesis, test_reference) in enumerate(zip(references, hypotheses, test_references)):
+        #bleu_hypo_ref = []
+        #bleu_1_score = corpus_bleu([[test_reference]], [hypothesis], weights=(0, 0, 0, 1)) # weight : value of n ( n-gram)
+        #bleu_hypo_ref.append(bleu_1_score)
         
+        #print(test_reference)
         hyp_sentence = []
-        for word_idx in hypothesis: # kth hypo sentence
+        for word_idx in hypothesis: 
             hyp_sentence.append(vocab.idx2word[word_idx])
         
         ref_sentence = []
-        for word_idx in test_references[0]:
-            ref_sentence.append(vocab.idx2word[word_idx])
-
-        print('Hypotheses: '+" ".join(hyp_sentence))
-        print('References: '+" ".join(ref_sentence))
+        for test in test_reference:
+            for word in test:
+                ref_sentence.append(vocab.idx2word[word])
         
-        
-    
-    """   
-    #bleu_2 = corpus_bleu(references, hypotheses, weights=(0, 1, 0, 0))
-    #bleu_3 = corpus_bleu(references, hypotheses, weights=(0, 0, 1, 0))
-    #bleu_4 = corpus_bleu(references, hypotheses, weights=(0, 0, 0, 1))
+        print('hypo',' '.join(hyp_sentence), '\nref', ' '.join(ref_sentence))
 
-    print("Validation loss: "+str(losses.avg))
+    bleu_1 = corpus_bleu(test_references, hypotheses, weights=(1, 0, 0, 0))
+    #bleu_4 = corpus_bleu([[test_references]], hypotheses, weights=(0, 0, 0, 1))
     print("BLEU-1: "+str(bleu_1))
-    #print("BLEU-2: "+str(bleu_2))
-    #print("BLEU-3: "+str(bleu_3))
-    #print("BLEU-4: "+str(bleu_4))
-    
+    #print("BLEU-1: "+str(bleu_1))
+
+def visualize(imgs, img_seq_num, alphas, losses, hyp_sentence, smooth=False):
+
     img_dim = 336 # 14*24
-    
-    hyp_sentence = []
-    for word_idx in hypotheses[k]: # kth hypo sentence
-        hyp_sentence.append(vocab.idx2word[word_idx])
-    
-    ref_sentence = []
-    for word_idx in test_references[k]:
-        ref_sentence.append(vocab.idx2word[word_idx])
 
-    print('Hypotheses: '+" ".join(hyp_sentence))
-    print('References: '+" ".join(ref_sentence))
-   
-    img = imgs[0][k] 
-    imageio.imwrite('img.jpg', img)
-  
-    if show_att:
-        image = Image.open('img.jpg')
-        image = image.resize([img_dim, img_dim], Image.LANCZOS)
+    
+    img = imgs[0][img_seq_num] 
+    imageio.imwrite(f'./visualize/img{img_seq_num}.jpg', img)
+
+
+    image = Image.open(f'./visualize/img{img_seq_num}.jpg')
+    image = image.resize([img_dim, img_dim], Image.LANCZOS)
+    
+    for t in range(len(hyp_sentence)):
         
-        for t in range(len(hyp_sentence)):
-            if t > 50:
-                break
-            plt.subplot(np.ceil(len(hyp_sentence) / 5.), 5, t + 1)
+        if t > 50:
+            break
+            
+        plt.subplot(np.ceil(len(hyp_sentence) / 5.), 5, t + 1)
 
-            plt.text(0, 1, '%s' % (hyp_sentence[t]), color='black', backgroundcolor='white', fontsize=12)
-            plt.imshow(image)
-            current_alpha = alphas[t, :]
-            if smooth:
-                alpha = skimage.transform.pyramid_expand(current_alpha.numpy(), upscale=24, sigma=8)
-            else:
-                alpha = skimage.transform.resize(current_alpha.numpy(), [14 * 24, 14 * 24])
-            if t == 0:
-                plt.imshow(alpha, alpha=0)
-            else:
-                plt.imshow(alpha, alpha=0.8)
-            plt.set_cmap(cm.Greys_r)
-            plt.axis('off')
+        plt.text(0, 1, '%s' % (hyp_sentence[t]), color='black', backgroundcolor='white', fontsize=7)
+        plt.imshow(image)
+        print('####t',t)
+        current_alpha = alphas[img_seq_num][t, :]
         
-
-        plt.show()
-    
-    else:
-        img = imageio.imread('img.jpg')
-        plt.imshow(img)
+        if smooth:
+            alpha = skimage.transform.pyramid_expand(current_alpha.cpu().numpy(), upscale=24, sigma=8)
+        else:
+            alpha = skimage.transform.resize(current_alpha.cpu().numpy(), [14 * 24, 14 * 24])
+        
+        if t == 0:
+            plt.imshow(alpha, alpha=0)
+        else:
+            plt.imshow(alpha, alpha=0.8)
+        
+        plt.set_cmap(cm.Greys_r)
         plt.axis('off')
-        
-    plt.show()
-    """
+
+    plt.savefig(f'./visualize/img{img_seq_num}.jpg')
+
     
 def validate():
 
@@ -490,6 +376,10 @@ def validate():
     losses = loss_obj()
 
     num_batches = len(val_loader)
+    
+    #validation start
+    start = time.time()
+
     # Batches
     for i, (imgs, caps, caplens) in enumerate(tqdm(val_loader)):
 
@@ -515,16 +405,11 @@ def validate():
          # References
         for j in range(targets.shape[0]):
             img_caps = targets[j].tolist() # validation dataset only has 1 unique caption per img
-            print(f'image captions  {j}  {img_caps}')
             clean_cap = [w for w in img_caps if w not in [PAD, START, END]]  # remove pad, start, and end
-            print(f'clean_cap captions  {j}  {clean_cap}')
-            #img_captions = list(map(lambda c: clean_cap,img_caps))
-            test_references.append(clean_cap)
-            references.append(img_caps)
-            print(f'references {references} image captiosn {img_captions}')
-             
-        #pickle.dump(scores, open('scores.pkl','wb'))
-        
+            img_captions = list(map(lambda c: clean_cap,img_caps))
+            test_references.append([clean_cap])
+            references.append(img_captions)
+
         # Hypotheses
         _, preds = torch.max(scores, dim=2)
         preds = preds.tolist()
@@ -540,39 +425,20 @@ def validate():
             all_alphas.append(alphas)
             all_imgs.append(imgs_jpg)
 
-    print("Completed validation...")
-   
-    print_sample(hypotheses, references, test_references, all_imgs, all_alphas,10,False, losses)
+    # end validation
+    end = time.time()
+
+    print("Completed validation... time elapsed" , end - start)
     
-def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=3):
-    """
-    Reads an image and captions it with beam search.
+    print_sample(hypotheses, references, test_references, all_imgs, all_alphas,losses)
+    #print("Completed validation... hypo shape" ,all_imgs.size)
+     
+######################
+# Run training/validation
+######################
 
-    :param encoder: encoder model
-    :param decoder: decoder model
-    :param image_path: path to image
-    :param word_map: word map
-    :param beam_size: number of sequences to consider at each decode-step
-    :return: caption, weights for visualization
-    """
+if train_model:
+    train()
 
-    k = beam_size
-    vocab_size = len(word_map)
-
-    # Read image and process
-    img = imread(image_path)
-    if len(img.shape) == 2:
-        img = img[:, :, np.newaxis]
-        img = np.concatenate([img, img, img], axis=2)
-    img = imresize(img, (256, 256))
-    img = img.transpose(2, 0, 1)
-    img = img / 255.
-    img = torch.FloatTensor(img).to(device)
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
-    transform = transforms.Compose([normalize])
-    image = transform(img)  # (3, 256, 256)
-
-    # Encode
-    image = image.unsqueeze(0)  # (1, 3, 256, 256)
-    encoder_out = encoder(image)  # (1, enc_image_siz
+if valid_model:
+    validate()

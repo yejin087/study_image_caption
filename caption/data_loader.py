@@ -43,24 +43,23 @@ class DataLoader(data.Dataset):
         caption.append(vocab('<start>'))
         caption.extend([vocab(token) for token in tokens])
         caption.append(vocab('<end>'))
-        target = torch.Tensor(caption)# image에 해당하는 caption이  index로 바뀐 tensor
+        target = torch.Tensor(caption)
         return image, target
 
     def __len__(self):
         return len(self.ids)
 
-def collate_fn(data): # sample을 batch로 합친다.
+def collate_fn(data):
     data.sort(key=lambda  x: len(x[1]), reverse=True)
     images, captions = zip(*data)
 
     images = torch.stack(images, 0)
 
-    lengths = [len(cap) for cap in captions] # batch 에 포함된 각 캡션의 단어 길이 list
-    targets = torch.zeros(len(captions), max(lengths)).long() # (캡션길이,가장 긴 caption 길이) 행렬 tensor 생성
+    lengths = [len(cap) for cap in captions]
+    targets = torch.zeros(len(captions), max(lengths)).long()
     for i, cap in enumerate(captions):
-        #print('captions, cp, i', len(captions), i, cap)
-        end = lengths[i] # i 째 caption의 단어길이
-        targets[i, :end] = cap[:end] # targets의 i번째 caption 저장????  
+        end = lengths[i]
+        targets[i, :end] = cap[:end]
     return images, targets, lengths
 
 def get_loader(method, vocab, batch_size):
@@ -72,8 +71,6 @@ def get_loader(method, vocab, batch_size):
     elif method =='val':
         root = 'data/val2014_resized'
         json = 'data/annotations/captions_val2014.json'
-    elif method == 'test':
-        root = 'data/test_resized'
 
     # rasnet transformation/normalization
     transform = transforms.Compose([

@@ -2,10 +2,8 @@
 This code is mainly taken from the following github repositories:
 1.  parksunwoo/show_attend_and_tell_pytorch
 Link: https://github.com/parksunwoo/show_attend_and_tell_pytorch/blob/master/prepro.py
-
 2. sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning
 Link: https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning
-
 This script processes the COCO dataset
 '''  
 
@@ -45,7 +43,7 @@ def build_vocab(json, threshold):
         tokens = nltk.tokenize.word_tokenize(caption.lower())
         counter.update(tokens)
 
-    # ommit non-frequent words # token 단어 개수가 경계값 보다 많으면 저장한다 빈도수가 많지 않으면 생략.
+    # ommit non-frequent words
     words = [word for word, cnt in counter.items() if cnt >= threshold]
 
     vocab = Vocabulary()
@@ -75,16 +73,16 @@ def resize_image(image):
     return image
 
 def main(caption_path,vocab_path,threshold):
-    vocab = build_vocab(json=caption_path,threshold=threshold)
-    with open(vocab_path, 'wb') as f:
-        pickle.dump(vocab, f)
+    #vocab = build_vocab(json=caption_path,threshold=threshold)
+    #with open(vocab_path, 'wb') as f:
+    #    pickle.dump(vocab, f)
 
     # print("resizing images...")
-    splits = ['val','train']
+    splits = ['testing']
 
     for split in splits:
-        folder = './data/test'
-        resized_folder = './data/test_resized/' %split
+        folder = '/home/muser/Context/Vis_Causal/data/images/%s' %split
+        resized_folder = '/home/muser/Context/Image-Captions/Cause_Caption/data/images/%s' %split
         if not os.path.exists(resized_folder):
             os.makedirs(resized_folder)
         image_files = os.listdir(folder)
@@ -101,4 +99,4 @@ caption_path = './data/annotations/captions_train2014.json'
 vocab_path = './data/vocab.pkl'
 threshold = 5
 
-#main(caption_path,vocab_path,threshold)
+main(caption_path,vocab_path,threshold)
