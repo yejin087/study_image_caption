@@ -222,20 +222,17 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Show, Attend, and Tell - Tutorial - Generate Caption')
 
     parser.add_argument('--beam_size','-bs',type=int, help ='beam search size')
-    #parser.add_argument('--gpu_number','-gn',help='select visible device')
     args = parser.parse_args()
     
-    #os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu_number
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    
     vocab = pickle.load(open('./data/annotations/unique_vocab.pkl', 'rb'))
 
     word_map = vocab.word2idx
     rev_word_map = vocab.idx2word
     
     encoder = Encoder().to(device)
-    decoder = Decoder(vocab_size=len(vocab),use_glove=False, use_bert=False).to(device)
+    decoder = Decoder(vocab_size=len(vocab)).to(device)
 
     print('Pre-Trained Baseline Model')
     encoder_checkpoint = torch.load('../checkpoints/causal2/encoder_epoch20')
