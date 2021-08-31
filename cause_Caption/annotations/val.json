@@ -1,0 +1,1318 @@
+[
+    {
+        "image_path": "images/validation/v0_im1.jpg",
+        "event": "A boy chasing a ball in his neighborhood so the running boy caught the attention of his neighbors"
+    },
+    {
+        "image_path": "images/validation/v0_im4.jpg",
+        "event": "Kids playing at park so the kids to have fun"
+    },
+    {
+        "image_path": "images/validation/v1_im1.jpg",
+        "event": "A girl is in the kitchen so food to be cooked"
+    },
+    {
+        "image_path": "images/validation/v1_im1.jpg",
+        "event": "A kid doing some baking so there to be food"
+    },
+    {
+        "image_path": "images/validation/v1_im3.jpg",
+        "event": "Young girl cooking so the young girl to have a good meal"
+    },
+    {
+        "image_path": "images/validation/v1_im3.jpg",
+        "event": "A girl is chopping vegetables so the knife to become dirty"
+    },
+    {
+        "image_path": "images/validation/v1_im4.jpg",
+        "event": "A girl chopping food on a board so the girl's parents tell her to be careful"
+    },
+    {
+        "image_path": "images/validation/v2_im1.jpg",
+        "event": "A group of people so the people to gather and talk about something they all enjoy"
+    },
+    {
+        "image_path": "images/validation/v2_im2.jpg",
+        "event": "A man on TV watches the sky at a kite festival so the man to see how far the kite goes"
+    },
+    {
+        "image_path": "images/validation/v2_im2.jpg",
+        "event": "A man being interviewed at a kite flying festival so a man to speak to a reporter"
+    },
+    {
+        "image_path": "images/validation/v2_im3.jpg",
+        "event": "A group of people at a kite flying festival so a kite flying competition"
+    },
+    {
+        "image_path": "images/validation/v3_im2.jpg",
+        "event": "A man is playing music instrument so a rhythmic tone is being heard by people nearby"
+    },
+    {
+        "image_path": "images/validation/v3_im3.jpg",
+        "event": "A guy drumming so loud noise to be heard"
+    },
+    {
+        "image_path": "images/validation/v3_im4.jpg",
+        "event": "Playing a drum so a rhythmic sound is being heard by nearby people"
+    },
+    {
+        "image_path": "images/validation/v3_im4.jpg",
+        "event": "A man playing the bongos at home so you are training improving your knowledge"
+    },
+    {
+        "image_path": "images/validation/v3_im4.jpg",
+        "event": "A man playing the bongos at home so nuisance to neighbors"
+    },
+    {
+        "image_path": "images/validation/v4_im1.jpg",
+        "event": "A bartender making a drink so he spills a little"
+    },
+    {
+        "image_path": "images/validation/v4_im2.jpg",
+        "event": "Someone is mixing a drink so a glass to be filled"
+    },
+    {
+        "image_path": "images/validation/v4_im3.jpg",
+        "event": "Man pouring drink so a drink to be consumed"
+    },
+    {
+        "image_path": "images/validation/v4_im4.jpg",
+        "event": "A bartender working so a drink to be made"
+    },
+    {
+        "image_path": "images/validation/v5_im2.jpg",
+        "event": "An athlete running and the media coverage by few people so a length to be recorded"
+    },
+    {
+        "image_path": "images/validation/v5_im2.jpg",
+        "event": "The girl reaching her ending point in running so she run faster"
+    },
+    {
+        "image_path": "images/validation/v5_im4.jpg",
+        "event": "Someone competes in a long jump event in Istanbul so his country to be proud of him if he wins the competition"
+    },
+    {
+        "image_path": "images/validation/v6_im1.jpg",
+        "event": "Someone is playing indoor squash or racquetball so a man is swinging a jacques"
+    },
+    {
+        "image_path": "images/validation/v6_im1.jpg",
+        "event": "A man is playing a game so he plays against other players"
+    },
+    {
+        "image_path": "images/validation/v6_im1.jpg",
+        "event": "A man plays racquetball so the man is holding a jacques"
+    },
+    {
+        "image_path": "images/validation/v6_im2.jpg",
+        "event": "A man with a racket waiting for the ball so the person to hit the ball with his racket"
+    },
+    {
+        "image_path": "images/validation/v6_im2.jpg",
+        "event": "Someone is playing indoor squash or racquetball so a man has a racket in his hand"
+    },
+    {
+        "image_path": "images/validation/v6_im3.jpg",
+        "event": "A man plays racket ball so the man is standing with a jacques"
+    },
+    {
+        "image_path": "images/validation/v6_im3.jpg",
+        "event": "A man plays racket ball so the man to get sweaty"
+    },
+    {
+        "image_path": "images/validation/v6_im3.jpg",
+        "event": "Man playing with racket so man to hit the ball with the racket"
+    },
+    {
+        "image_path": "images/validation/v6_im4.jpg",
+        "event": "Man wearing a red shirt practicing sports so the man to get better at sports"
+    },
+    {
+        "image_path": "images/validation/v6_im4.jpg",
+        "event": "A man playing racquetball so a man is indoors"
+    },
+    {
+        "image_path": "images/validation/v7_im3.jpg",
+        "event": "A man with a crossbow so arrows to fly through the air"
+    },
+    {
+        "image_path": "images/validation/v7_im4.jpg",
+        "event": "Guy shooting a bow and arrow so the arrow to travel through the air"
+    },
+    {
+        "image_path": "images/validation/v8_im1.jpg",
+        "event": "A man is jumping over a fence so the man will land"
+    },
+    {
+        "image_path": "images/validation/v8_im2.jpg",
+        "event": "A man grinding on a snow board so jump and do dares"
+    },
+    {
+        "image_path": "images/validation/v8_im2.jpg",
+        "event": "A snowboarder grinding a rail so make a grinding sound"
+    },
+    {
+        "image_path": "images/validation/v8_im3.jpg",
+        "event": "Boy skateboarding so skateboarder to raise his arms to maintain balance on a rail or jump"
+    },
+    {
+        "image_path": "images/validation/v9_im1.jpg",
+        "event": "A guy is snowboarding off a wall in wet snow on a bright day so the man's heart is racing"
+    },
+    {
+        "image_path": "images/validation/v9_im1.jpg",
+        "event": "Man King so fun in the snow"
+    },
+    {
+        "image_path": "images/validation/v9_im1.jpg",
+        "event": "A man skiing so marks in the snow"
+    },
+    {
+        "image_path": "images/validation/v9_im2.jpg",
+        "event": "A skier going down hill so leave tracks in the snow"
+    },
+    {
+        "image_path": "images/validation/v9_im3.jpg",
+        "event": "A person skiing down a hill so people to have a lot of fun"
+    },
+    {
+        "image_path": "images/validation/v9_im3.jpg",
+        "event": "A person skiing down a hill so a pattern in the fresh snow"
+    },
+    {
+        "image_path": "images/validation/v9_im4.jpg",
+        "event": "A snow track so a large mark in the snow"
+    },
+    {
+        "image_path": "images/validation/v9_im4.jpg",
+        "event": "A snowboarder in the air so the snowboarder to land in the snow"
+    },
+    {
+        "image_path": "images/validation/v10_im1.jpg",
+        "event": "At a fencing match so heightened anxiety and nervousness"
+    },
+    {
+        "image_path": "images/validation/v12_im1.jpg",
+        "event": "Having fun with friends so people be happy"
+    },
+    {
+        "image_path": "images/validation/v13_im1.jpg",
+        "event": "People are playing sports so are enjoying the sport"
+    },
+    {
+        "image_path": "images/validation/v14_im4.jpg",
+        "event": "A girl practice karate so the girl improving her posture as she learns to control her body"
+    },
+    {
+        "image_path": "images/validation/v15_im1.jpg",
+        "event": "Man with racket so ball to fall"
+    },
+    {
+        "image_path": "images/validation/v16_im4.jpg",
+        "event": "Getting ready for practice so a woman is playing track and field"
+    },
+    {
+        "image_path": "images/validation/v17_im1.jpg",
+        "event": "Two girls leading a horse and one girl riding it so the horse to walk slowly"
+    },
+    {
+        "image_path": "images/validation/v17_im2.jpg",
+        "event": "A man is standing next to horses so the horse to move"
+    },
+    {
+        "image_path": "images/validation/v17_im3.jpg",
+        "event": "People riding horses so two women are near a horse"
+    },
+    {
+        "image_path": "images/validation/v17_im4.jpg",
+        "event": "A young girl learning how to horseback ride so she rides a horse with help"
+    },
+    {
+        "image_path": "images/validation/v17_im4.jpg",
+        "event": "Two women walking a horse with a person riding so the horse to be led around"
+    },
+    {
+        "image_path": "images/validation/v18_im1.jpg",
+        "event": "People laying swords so someone to win"
+    },
+    {
+        "image_path": "images/validation/v18_im4.jpg",
+        "event": "A person fencing so someone to feel satisfied"
+    },
+    {
+        "image_path": "images/validation/v19_im2.jpg",
+        "event": "White font words on a black background so you to understand what might be happening"
+    },
+    {
+        "image_path": "images/validation/v19_im2.jpg",
+        "event": "White font words on a black background so introduction to a movie scene"
+    },
+    {
+        "image_path": "images/validation/v19_im3.jpg",
+        "event": "A scene from an old movie so you to go to sleep"
+    },
+    {
+        "image_path": "images/validation/v19_im4.jpg",
+        "event": "A woman complains so the woman gets upset"
+    },
+    {
+        "image_path": "images/validation/v20_im1.jpg",
+        "event": "Long ice slides so high speed erratic sliding"
+    },
+    {
+        "image_path": "images/validation/v20_im1.jpg",
+        "event": "Long ice slides so cars to slip"
+    },
+    {
+        "image_path": "images/validation/v20_im2.jpg",
+        "event": "A road covered in snowy ice so track for skis"
+    },
+    {
+        "image_path": "images/validation/v20_im3.jpg",
+        "event": "People tobogganing on a track so guaranteed fun"
+    },
+    {
+        "image_path": "images/validation/v20_im3.jpg",
+        "event": "Ice and hills and snow so a very slippery slope"
+    },
+    {
+        "image_path": "images/validation/v20_im4.jpg",
+        "event": "A man standing next to inter tubes next to an icy slope so he falls down the hill"
+    },
+    {
+        "image_path": "images/validation/v20_im4.jpg",
+        "event": "A night seeing so the riders to have even more fun"
+    },
+    {
+        "image_path": "images/validation/v21_im1.jpg",
+        "event": "Smiling woman on a cooking show so a good recipe being taught"
+    },
+    {
+        "image_path": "images/validation/v21_im3.jpg",
+        "event": "A man is cooking in the kitchen so burnt food"
+    },
+    {
+        "image_path": "images/validation/v21_im3.jpg",
+        "event": "A person pouring liquid into a cooking pan so the pan to sizzle"
+    },
+    {
+        "image_path": "images/validation/v22_im1.jpg",
+        "event": "Chefs are preparing a meal so dished and cookware that need washed"
+    },
+    {
+        "image_path": "images/validation/v22_im2.jpg",
+        "event": "Cooking chef training his students so students creating the meal"
+    },
+    {
+        "image_path": "images/validation/v22_im2.jpg",
+        "event": "A chef tastes the food so a chef gives corrections to cooks"
+    },
+    {
+        "image_path": "images/validation/v22_im3.jpg",
+        "event": "Preparing food so they are mixing all the ingredients"
+    },
+    {
+        "image_path": "images/validation/v22_im4.jpg",
+        "event": "A child pouring ingredients into a mixer so mixer is making noise"
+    },
+    {
+        "image_path": "images/validation/v22_im4.jpg",
+        "event": "Girl pouring into a mixing machine so a mix is done"
+    },
+    {
+        "image_path": "images/validation/v23_im1.jpg",
+        "event": "A man getting a haircut so the man to look cleaner"
+    },
+    {
+        "image_path": "images/validation/v23_im1.jpg",
+        "event": "A man is getting a hair cut so he looks handsome"
+    },
+    {
+        "image_path": "images/validation/v23_im2.jpg",
+        "event": "Male in blue shirt starring into camera so a photo to be taken of the man in a blue shirt"
+    },
+    {
+        "image_path": "images/validation/v23_im4.jpg",
+        "event": "A group of men are getting their hair cut so a person with short hair"
+    },
+    {
+        "image_path": "images/validation/v23_im4.jpg",
+        "event": "A group of men are getting their hair cut so newly fresh hair styles for the group of men at the barbara"
+    },
+    {
+        "image_path": "images/validation/v23_im4.jpg",
+        "event": "A busy hair salon so customers to wait for their turn to get a haircut"
+    },
+    {
+        "image_path": "images/validation/v24_im2.jpg",
+        "event": "Individuals competing in a bicycle race so one person to win the race"
+    },
+    {
+        "image_path": "images/validation/v24_im3.jpg",
+        "event": "Bicyclists racing up a hilly course so a slow down depending on how steep it is"
+    },
+    {
+        "image_path": "images/validation/v25_im1.jpg",
+        "event": "A person steers their lawnmower in the backyard so the lawn is mowed"
+    },
+    {
+        "image_path": "images/validation/v25_im2.jpg",
+        "event": "First person view of driving a lawnmower so grass to be cut"
+    },
+    {
+        "image_path": "images/validation/v26_im1.jpg",
+        "event": "Horse riding so the rider to be on top of a horse"
+    },
+    {
+        "image_path": "images/validation/v26_im2.jpg",
+        "event": "Horseback riding so the rider to be happy"
+    },
+    {
+        "image_path": "images/validation/v26_im2.jpg",
+        "event": "Horseback riding so the woman to build strong leg muscles"
+    },
+    {
+        "image_path": "images/validation/v26_im3.jpg",
+        "event": "Horseback riding so the horse become tired"
+    },
+    {
+        "image_path": "images/validation/v26_im4.jpg",
+        "event": "The horseback riding instructor is addressing her student so the student to become a better horseback rider"
+    },
+    {
+        "image_path": "images/validation/v27_im3.jpg",
+        "event": "Girl helping mom cook so a meal is being prepared for supper by mom and daughter"
+    },
+    {
+        "image_path": "images/validation/v27_im3.jpg",
+        "event": "Girl helping mom cook so a girl is learning how to prepare food"
+    },
+    {
+        "image_path": "images/validation/v27_im4.jpg",
+        "event": "A child holding a chair in a living room so the girl is done learning how to cook and is taking care of a younger person"
+    },
+    {
+        "image_path": "images/validation/v28_im1.jpg",
+        "event": "A man using a paddle so sore muscles"
+    },
+    {
+        "image_path": "images/validation/v30_im3.jpg",
+        "event": "A woman playing ice curling so entertainment to viewers"
+    },
+    {
+        "image_path": "images/validation/v30_im4.jpg",
+        "event": "People playing curling so woman hit target"
+    },
+    {
+        "image_path": "images/validation/v30_im4.jpg",
+        "event": "A curling match (women) so two woman face off"
+    },
+    {
+        "image_path": "images/validation/v30_im4.jpg",
+        "event": "A curling match (women) so a winner and a loser"
+    },
+    {
+        "image_path": "images/validation/v32_im1.jpg",
+        "event": "A person scrapes the frost off of their car window so the car's window to be clean"
+    },
+    {
+        "image_path": "images/validation/v34_im1.jpg",
+        "event": "Lots of people are standing on a beach looking towards the ocean so nice pictures to be taken"
+    },
+    {
+        "image_path": "images/validation/v34_im1.jpg",
+        "event": "Lots of people are standing on a beach looking towards the ocean so people observe sculpture"
+    },
+    {
+        "image_path": "images/validation/v34_im2.jpg",
+        "event": "A day at the beach so so much fun most would agree"
+    },
+    {
+        "image_path": "images/validation/v34_im2.jpg",
+        "event": "Sand creations at a beach so more people to look at them"
+    },
+    {
+        "image_path": "images/validation/v34_im3.jpg",
+        "event": "A sand castle competition so competition brings effort to the best result"
+    },
+    {
+        "image_path": "images/validation/v34_im3.jpg",
+        "event": "People are looking at sand sculptures so 1. people to get happy. 2. people to enjoy the sand sculptures"
+    },
+    {
+        "image_path": "images/validation/v34_im4.jpg",
+        "event": "Group of people on the beach looking sand sculpture so the sculptures in the sand cause admiration"
+    },
+    {
+        "image_path": "images/validation/v34_im4.jpg",
+        "event": "A sand sculpture that is being looked at so different experience of other forms art"
+    },
+    {
+        "image_path": "images/validation/v35_im3.jpg",
+        "event": "People swimming in a pool so it reduces the extra fat and make the body health"
+    },
+    {
+        "image_path": "images/validation/v35_im4.jpg",
+        "event": "There are several people relaxing in the swimming pool so their swimming clothes to get wet"
+    },
+    {
+        "image_path": "images/validation/v36_im3.jpg",
+        "event": "Woman preparing food on counter so woman to put the food on a plate"
+    },
+    {
+        "image_path": "images/validation/v36_im4.jpg",
+        "event": "Woman preparing food in the kitchen so woman to have a meal to eat in the kitchen"
+    },
+    {
+        "image_path": "images/validation/v37_im1.jpg",
+        "event": "A man working out at the gym so a man is healthier"
+    },
+    {
+        "image_path": "images/validation/v37_im2.jpg",
+        "event": "A man is doing setups with a ball so he gets tired after doing it for so long"
+    },
+    {
+        "image_path": "images/validation/v38_im4.jpg",
+        "event": "Men playing racket ball so one man passing by another man with a ball"
+    },
+    {
+        "image_path": "images/validation/v39_im1.jpg",
+        "event": "The person is cutting so the pieces cut out are ready to be baked"
+    },
+    {
+        "image_path": "images/validation/v39_im2.jpg",
+        "event": "Cut into slices so the cookies are the same size"
+    },
+    {
+        "image_path": "images/validation/v39_im4.jpg",
+        "event": "Cookies on cookie sheet so the cookies were baked"
+    },
+    {
+        "image_path": "images/validation/v39_im4.jpg",
+        "event": "Cookies on the table so they be eaten"
+    },
+    {
+        "image_path": "images/validation/v40_im1.jpg",
+        "event": "A race in an Olympic size pool so water to splash"
+    },
+    {
+        "image_path": "images/validation/v40_im1.jpg",
+        "event": "Swimmers racing so water to be splashed"
+    },
+    {
+        "image_path": "images/validation/v40_im3.jpg",
+        "event": "Swimming competition so an audience watching"
+    },
+    {
+        "image_path": "images/validation/v40_im4.jpg",
+        "event": "A competitive swim meet so someone to reach the side in first place"
+    },
+    {
+        "image_path": "images/validation/v41_im1.jpg",
+        "event": "A man is playing on the water so he has fun"
+    },
+    {
+        "image_path": "images/validation/v41_im1.jpg",
+        "event": "A man wake boarding so a man getting wet"
+    },
+    {
+        "image_path": "images/validation/v41_im2.jpg",
+        "event": "A guy is water skiing so he falls or falter into the water"
+    },
+    {
+        "image_path": "images/validation/v41_im3.jpg",
+        "event": "A man water skiing so the man to get wet"
+    },
+    {
+        "image_path": "images/validation/v41_im3.jpg",
+        "event": "Water skiing so the man is riding the wake on a wake board"
+    },
+    {
+        "image_path": "images/validation/v41_im3.jpg",
+        "event": "Water skiing so boat pulling a man"
+    },
+    {
+        "image_path": "images/validation/v41_im4.jpg",
+        "event": "A man water-skiing so the man to jumping over waves"
+    },
+    {
+        "image_path": "images/validation/v41_im4.jpg",
+        "event": "A man water skiing so he gets wet"
+    },
+    {
+        "image_path": "images/validation/v41_im4.jpg",
+        "event": "Man playing water sport so man to enjoy himself"
+    },
+    {
+        "image_path": "images/validation/v42_im1.jpg",
+        "event": "Food being mixed in bowl so a mixed meal to be created"
+    },
+    {
+        "image_path": "images/validation/v42_im1.jpg",
+        "event": "Food being mixed in bowl so food being prepared"
+    },
+    {
+        "image_path": "images/validation/v42_im1.jpg",
+        "event": "A mixer mixing things so will combine the ingredients needed for the recipe being made"
+    },
+    {
+        "image_path": "images/validation/v42_im2.jpg",
+        "event": "Add 1 cup of sugar so the mixture to become more sugary"
+    },
+    {
+        "image_path": "images/validation/v43_im1.jpg",
+        "event": "Two buckets with liquid so will be used to clean the floor"
+    },
+    {
+        "image_path": "images/validation/v43_im2.jpg",
+        "event": "Person cleaning so the floor to get cleaner"
+    },
+    {
+        "image_path": "images/validation/v43_im2.jpg",
+        "event": "A man cleaning the floor so the man uses a mop with two buckets"
+    },
+    {
+        "image_path": "images/validation/v43_im4.jpg",
+        "event": "Sweeping an empty room so room become clean"
+    },
+    {
+        "image_path": "images/validation/v43_im4.jpg",
+        "event": "A janitor cleaning the floor with a mop and two buckets so the man rolls the buckets over the floor"
+    },
+    {
+        "image_path": "images/validation/v44_im2.jpg",
+        "event": "The people play the polo so people watching the polo game"
+    },
+    {
+        "image_path": "images/validation/v44_im2.jpg",
+        "event": "They are playing polo so a fun game for spectators to enjoy"
+    },
+    {
+        "image_path": "images/validation/v44_im3.jpg",
+        "event": "A group of people on horseback playing polo so a ball to be chased"
+    },
+    {
+        "image_path": "images/validation/v44_im4.jpg",
+        "event": "A team playing polo so someone to win or lose"
+    },
+    {
+        "image_path": "images/validation/v44_im4.jpg",
+        "event": "A team playing polo so a fierce competition between two teams"
+    },
+    {
+        "image_path": "images/validation/v47_im1.jpg",
+        "event": "A person ironing so wrinkle free clothes"
+    },
+    {
+        "image_path": "images/validation/v47_im1.jpg",
+        "event": "A person ironing so ironed clothes"
+    },
+    {
+        "image_path": "images/validation/v47_im1.jpg",
+        "event": "A woman prepares to iron so the women hold the cloth in her hand"
+    },
+    {
+        "image_path": "images/validation/v47_im2.jpg",
+        "event": "Ironing clothes so clothes without wrinkles"
+    },
+    {
+        "image_path": "images/validation/v47_im4.jpg",
+        "event": "A person ironing clothes so straight clothes"
+    },
+    {
+        "image_path": "images/validation/v47_im4.jpg",
+        "event": "A person ironing clothes so the iron to get hot"
+    },
+    {
+        "image_path": "images/validation/v48_im1.jpg",
+        "event": "Someone cutting various vegetables on a cutting board so many vegetables are on the cutting board"
+    },
+    {
+        "image_path": "images/validation/v48_im4.jpg",
+        "event": "Someone.preparing a meal so people to eat"
+    },
+    {
+        "image_path": "images/validation/v49_im2.jpg",
+        "event": "A woman grooming a dog so the dog to be cleaned of excess dirt or hair"
+    },
+    {
+        "image_path": "images/validation/v49_im4.jpg",
+        "event": "A person brushing a dog so the dog to shed less"
+    },
+    {
+        "image_path": "images/validation/v52_im1.jpg",
+        "event": "Dirt bike racing so riders to get dirty"
+    },
+    {
+        "image_path": "images/validation/v52_im2.jpg",
+        "event": "A man on a dirt bike so a lot of dirt to fly up"
+    },
+    {
+        "image_path": "images/validation/v52_im4.jpg",
+        "event": "A day at the track so someone to be happy"
+    },
+    {
+        "image_path": "images/validation/v53_im2.jpg",
+        "event": "Playing guitar so sound sweet"
+    },
+    {
+        "image_path": "images/validation/v53_im2.jpg",
+        "event": "A man playing a guitar so the room to become noisy"
+    },
+    {
+        "image_path": "images/validation/v53_im3.jpg",
+        "event": "A man is playing a guitar so the man to sharpen his guitar playing skills"
+    },
+    {
+        "image_path": "images/validation/v53_im3.jpg",
+        "event": "A man is playing a guitar so a man holds a guitar"
+    },
+    {
+        "image_path": "images/validation/v53_im4.jpg",
+        "event": "A man playing guitar so the guitar player becoming relaxed"
+    },
+    {
+        "image_path": "images/validation/v54_im2.jpg",
+        "event": "Horses on polo grounds so they run"
+    },
+    {
+        "image_path": "images/validation/v54_im3.jpg",
+        "event": "People riding horses so the horses to exert physical energy"
+    },
+    {
+        "image_path": "images/validation/v54_im4.jpg",
+        "event": "Horseback racing so brings the horses excitement"
+    },
+    {
+        "image_path": "images/validation/v54_im4.jpg",
+        "event": "Horseback racing so horses to race each other"
+    },
+    {
+        "image_path": "images/validation/v55_im1.jpg",
+        "event": "Kids playing basketball so a basketball game to be played"
+    },
+    {
+        "image_path": "images/validation/v55_im2.jpg",
+        "event": "The legs of people on a court so the men to get tired"
+    },
+    {
+        "image_path": "images/validation/v55_im2.jpg",
+        "event": "Group of guys playing in a gym so a basketball game to occur"
+    },
+    {
+        "image_path": "images/validation/v55_im4.jpg",
+        "event": "Kids playing at the gym so the kids to have fun"
+    },
+    {
+        "image_path": "images/validation/v55_im4.jpg",
+        "event": "It is indoor soccer! so a soccer game to be played"
+    },
+    {
+        "image_path": "images/validation/v57_im2.jpg",
+        "event": "A karate class so the child to learn to do karate"
+    },
+    {
+        "image_path": "images/validation/v57_im2.jpg",
+        "event": "Asian boy practicing martial arts so people to be impressed"
+    },
+    {
+        "image_path": "images/validation/v57_im3.jpg",
+        "event": "Kid doing karate so kid to learn karate"
+    },
+    {
+        "image_path": "images/validation/v57_im4.jpg",
+        "event": "The boy practices karate so the boy to learn more about karate"
+    },
+    {
+        "image_path": "images/validation/v58_im1.jpg",
+        "event": "A bunch of people are playing a sport in a field so at least a few minor injuries or scrapes"
+    },
+    {
+        "image_path": "images/validation/v58_im1.jpg",
+        "event": "People are playing a sport, possibly hie lie so audience watching them playing a sport"
+    },
+    {
+        "image_path": "images/validation/v58_im1.jpg",
+        "event": "People are playing a sport, possibly hie lie so that a team scored a goal"
+    },
+    {
+        "image_path": "images/validation/v58_im2.jpg",
+        "event": "Soccer players in an arena so goals being scored"
+    },
+    {
+        "image_path": "images/validation/v58_im3.jpg",
+        "event": "Three people are playing soccer so the player is shooting the ball"
+    },
+    {
+        "image_path": "images/validation/v58_im3.jpg",
+        "event": "Three people are playing soccer so soccer-based amusements to be had"
+    },
+    {
+        "image_path": "images/validation/v58_im3.jpg",
+        "event": "Three men playing field hockey so men scoring points"
+    },
+    {
+        "image_path": "images/validation/v58_im4.jpg",
+        "event": "Image is very blurry so people can't see the image well"
+    },
+    {
+        "image_path": "images/validation/v59_im2.jpg",
+        "event": "A man is walking on stilts so the man to fall"
+    },
+    {
+        "image_path": "images/validation/v61_im1.jpg",
+        "event": "A girl is performing gymnastics so a score to be given"
+    },
+    {
+        "image_path": "images/validation/v61_im4.jpg",
+        "event": "A woman is demonstrating gymnastics so a sense of accomplishment"
+    },
+    {
+        "image_path": "images/validation/v61_im4.jpg",
+        "event": "A gymnast at an event is mid jump so spin and land on her feet"
+    },
+    {
+        "image_path": "images/validation/v62_im1.jpg",
+        "event": "Man on top of a white cylinder sprays water so people get wet"
+    },
+    {
+        "image_path": "images/validation/v62_im1.jpg",
+        "event": "Man on top of a white cylinder sprays water so bm riders race on a dirt track"
+    },
+    {
+        "image_path": "images/validation/v62_im2.jpg",
+        "event": "A group of people dirt biking so people are riding bikes over hills"
+    },
+    {
+        "image_path": "images/validation/v62_im2.jpg",
+        "event": "A group of people dirt biking so people pedal the bikes"
+    },
+    {
+        "image_path": "images/validation/v62_im2.jpg",
+        "event": "Mountain bikers get sick air so mountain bikers land after a big jump"
+    },
+    {
+        "image_path": "images/validation/v62_im4.jpg",
+        "event": "Motocross event on a sunny day so the biker crashes into the dirt"
+    },
+    {
+        "image_path": "images/validation/v63_im2.jpg",
+        "event": "Two people facing each other so two people to look at each other"
+    },
+    {
+        "image_path": "images/validation/v63_im2.jpg",
+        "event": "Two people facing each other so talking among st them"
+    },
+    {
+        "image_path": "images/validation/v63_im4.jpg",
+        "event": "Guys dancing so two bodied moving"
+    },
+    {
+        "image_path": "images/validation/v64_im3.jpg",
+        "event": "A group of people are facing a large screen while using exercise bikes so they are exercising together"
+    },
+    {
+        "image_path": "images/validation/v65_im1.jpg",
+        "event": "Two people are playing with a ball so someone is discussing dodge ball rules and regulations"
+    },
+    {
+        "image_path": "images/validation/v68_im2.jpg",
+        "event": "Matilda is a box racer so one to win or lose the race"
+    },
+    {
+        "image_path": "images/validation/v68_im3.jpg",
+        "event": "A bike rider with a helmet so the rider to be protected"
+    },
+    {
+        "image_path": "images/validation/v68_im3.jpg",
+        "event": "A person on a bike so that person to travel some distance"
+    },
+    {
+        "image_path": "images/validation/v68_im4.jpg",
+        "event": "Kid on bike jumping on a dirt track so dirt flying off the track"
+    },
+    {
+        "image_path": "images/validation/v69_im2.jpg",
+        "event": "A man running so the man jumps and lands on the fall mattress"
+    },
+    {
+        "image_path": "images/validation/v69_im2.jpg",
+        "event": "Man sprinting on a track so a man crosses the finish line"
+    },
+    {
+        "image_path": "images/validation/v69_im3.jpg",
+        "event": "A man sprinting so gain of yards"
+    },
+    {
+        "image_path": "images/validation/v69_im3.jpg",
+        "event": "A man sprinting so a man to run fast"
+    },
+    {
+        "image_path": "images/validation/v69_im4.jpg",
+        "event": "People at a sporting event so people to watch an event"
+    },
+    {
+        "image_path": "images/validation/v69_im4.jpg",
+        "event": "Athlete performing high jump so the athlete jumps over the fence"
+    },
+    {
+        "image_path": "images/validation/v70_im1.jpg",
+        "event": "A business man working a rubies cube while another watches so the people watching to be impressed"
+    },
+    {
+        "image_path": "images/validation/v70_im1.jpg",
+        "event": "A person in a suit solving a rubies cube so a man is looking at a rubik's cube"
+    },
+    {
+        "image_path": "images/validation/v70_im1.jpg",
+        "event": "A person in a suit solving a rubies cube so the rubies cube being solved"
+    },
+    {
+        "image_path": "images/validation/v70_im2.jpg",
+        "event": "Man solving Rubin cube so a man is twisting a rubik's cube"
+    },
+    {
+        "image_path": "images/validation/v70_im2.jpg",
+        "event": "Man solving Rubin cube so the rubin cube being solved"
+    },
+    {
+        "image_path": "images/validation/v70_im2.jpg",
+        "event": "A guy playing with a Rubin cube so the colors to move"
+    },
+    {
+        "image_path": "images/validation/v70_im2.jpg",
+        "event": "A guy playing with a Rubin cube so the guy to solve the rubin cube"
+    },
+    {
+        "image_path": "images/validation/v70_im3.jpg",
+        "event": "A man is playing with a rubies cube so the man to be happy"
+    },
+    {
+        "image_path": "images/validation/v70_im3.jpg",
+        "event": "A man examining an object in his hands so the man looking at the object very closely"
+    },
+    {
+        "image_path": "images/validation/v70_im4.jpg",
+        "event": "A man is playing with a Rubik's cube so a man watches a man solving a rubik's cube"
+    },
+    {
+        "image_path": "images/validation/v70_im4.jpg",
+        "event": "A man is playing with a Rubik's cube so the man solving rubik's cube"
+    },
+    {
+        "image_path": "images/validation/v71_im1.jpg",
+        "event": "A woman getting hair done so the hairdresser to be paid for his work"
+    },
+    {
+        "image_path": "images/validation/v71_im1.jpg",
+        "event": "A man curling a woman's hair so the woman to feel pretty"
+    },
+    {
+        "image_path": "images/validation/v71_im2.jpg",
+        "event": "A hairdresser drying a woman's hair so the woman's hair to become a different color"
+    },
+    {
+        "image_path": "images/validation/v71_im2.jpg",
+        "event": "Man and woman demonstrating how to use blow dryer video so they use the blow dryer"
+    },
+    {
+        "image_path": "images/validation/v71_im3.jpg",
+        "event": "A hair stylist working on a client so earning a lot of money"
+    },
+    {
+        "image_path": "images/validation/v71_im4.jpg",
+        "event": "A man demonstrating hairstyles so the woman to feel wanted"
+    },
+    {
+        "image_path": "images/validation/v71_im4.jpg",
+        "event": "A man demonstrating hairstyles so hairstyles to be learned by others"
+    },
+    {
+        "image_path": "images/validation/v72_im1.jpg",
+        "event": "People playing paintball outside so people to run around on the grass"
+    },
+    {
+        "image_path": "images/validation/v72_im2.jpg",
+        "event": "Kids playing with paintball guns so kids hiding and aiming with paintball guns"
+    },
+    {
+        "image_path": "images/validation/v72_im2.jpg",
+        "event": "People playing paintball so people to have fun"
+    },
+    {
+        "image_path": "images/validation/v72_im2.jpg",
+        "event": "People playing paintball so people to get hurt"
+    },
+    {
+        "image_path": "images/validation/v72_im3.jpg",
+        "event": "People playing air soft so people aiming at each other with paintball guns"
+    },
+    {
+        "image_path": "images/validation/v72_im3.jpg",
+        "event": "People playing paintball so someone to shoot a paintball gun"
+    },
+    {
+        "image_path": "images/validation/v72_im4.jpg",
+        "event": "People are playing paintball so people shooting at each other with paintball guns"
+    },
+    {
+        "image_path": "images/validation/v73_im1.jpg",
+        "event": "A man polishing his show with whitener so a man is spraying cleaner onto the shoes"
+    },
+    {
+        "image_path": "images/validation/v73_im1.jpg",
+        "event": "A shoe store employee polishing and coloring a pair of shoes so the employee is spraying a white polish onto the shoes"
+    },
+    {
+        "image_path": "images/validation/v73_im3.jpg",
+        "event": "A man is polishing his shoes so they look buffed"
+    },
+    {
+        "image_path": "images/validation/v73_im4.jpg",
+        "event": "A man dyeing suede shoes so new looking"
+    },
+    {
+        "image_path": "images/validation/v74_im1.jpg",
+        "event": "People gambling so people to win or lose money"
+    },
+    {
+        "image_path": "images/validation/v74_im1.jpg",
+        "event": "People are playing poker so people to place a bet"
+    },
+    {
+        "image_path": "images/validation/v74_im2.jpg",
+        "event": "A man gambling at a card table so a man to place poker chips down"
+    },
+    {
+        "image_path": "images/validation/v74_im2.jpg",
+        "event": "Playing in a casino so a lot of money to be spent"
+    },
+    {
+        "image_path": "images/validation/v74_im4.jpg",
+        "event": "Men gambling so money to be won/lost"
+    },
+    {
+        "image_path": "images/validation/v75_im1.jpg",
+        "event": "People smoking hook so the people to get high"
+    },
+    {
+        "image_path": "images/validation/v75_im1.jpg",
+        "event": "Three people at a hookah bar so the people to smoke"
+    },
+    {
+        "image_path": "images/validation/v75_im1.jpg",
+        "event": "Three people at a hookah bar so they smoke hookah"
+    },
+    {
+        "image_path": "images/validation/v75_im2.jpg",
+        "event": "People at a hookah lounge so people to smoke hook"
+    },
+    {
+        "image_path": "images/validation/v75_im2.jpg",
+        "event": "A couple at a hookah bar so the couple to have a good time"
+    },
+    {
+        "image_path": "images/validation/v75_im2.jpg",
+        "event": "A couple at a hookah bar so they smoke hookah"
+    },
+    {
+        "image_path": "images/validation/v75_im3.jpg",
+        "event": "A girl singing so people to hear a song"
+    },
+    {
+        "image_path": "images/validation/v75_im4.jpg",
+        "event": "A woman smokes a hookah while a man stands next to her so smoke to fill the room"
+    },
+    {
+        "image_path": "images/validation/v76_im1.jpg",
+        "event": "Team playing soccer so the team to have fun"
+    },
+    {
+        "image_path": "images/validation/v76_im2.jpg",
+        "event": "People playing beach soccer so people are running on the sand"
+    },
+    {
+        "image_path": "images/validation/v76_im2.jpg",
+        "event": "People playing beach soccer so the players kick the ball to the goal"
+    },
+    {
+        "image_path": "images/validation/v76_im3.jpg",
+        "event": "People playing beach soccer so a team win the game"
+    },
+    {
+        "image_path": "images/validation/v77_im2.jpg",
+        "event": "A man riding with his skateboard so the man to ride down a large hill"
+    },
+    {
+        "image_path": "images/validation/v77_im2.jpg",
+        "event": "A man is riding a skateboard so a rolling sound of the wheels"
+    },
+    {
+        "image_path": "images/validation/v77_im2.jpg",
+        "event": "A man is riding a skateboard so a skateboarder on the street"
+    },
+    {
+        "image_path": "images/validation/v77_im3.jpg",
+        "event": "A person riding a skateboard so the person to travel faster"
+    },
+    {
+        "image_path": "images/validation/v78_im1.jpg",
+        "event": "Andre the giant arm wrestling so one of them to win"
+    },
+    {
+        "image_path": "images/validation/v78_im1.jpg",
+        "event": "Two men are arm wrestling so a competition"
+    },
+    {
+        "image_path": "images/validation/v78_im2.jpg",
+        "event": "Arm wrestling so strength is being tested"
+    },
+    {
+        "image_path": "images/validation/v78_im2.jpg",
+        "event": "Men are arm wrestling so people to watch"
+    },
+    {
+        "image_path": "images/validation/v78_im2.jpg",
+        "event": "Two men are arm wrestling so arms are sitting on the table"
+    },
+    {
+        "image_path": "images/validation/v78_im3.jpg",
+        "event": "Two men are arm wrestling so an arm wrestling match"
+    },
+    {
+        "image_path": "images/validation/v78_im4.jpg",
+        "event": "Arm wrestling so one arm gets pinned onto the table"
+    },
+    {
+        "image_path": "images/validation/v79_im1.jpg",
+        "event": "A woman is cheering in the street so other people to stop and see what is going on"
+    },
+    {
+        "image_path": "images/validation/v79_im1.jpg",
+        "event": "A woman in sunglasses so the sun not to get in her eyes"
+    },
+    {
+        "image_path": "images/validation/v79_im2.jpg",
+        "event": "People playing beach volleyball so people to cheer and watch the match"
+    },
+    {
+        "image_path": "images/validation/v79_im2.jpg",
+        "event": "People playing beach volleyball so the ladies have fun at the beach smashing the ball"
+    },
+    {
+        "image_path": "images/validation/v79_im2.jpg",
+        "event": "Two people are playing in the sand so sand to get in between their toes (because they are in sand)"
+    },
+    {
+        "image_path": "images/validation/v79_im2.jpg",
+        "event": "Two people are playing in the sand so they get covered in sand"
+    },
+    {
+        "image_path": "images/validation/v79_im2.jpg",
+        "event": "Two people play volleyball so a game to be played"
+    },
+    {
+        "image_path": "images/validation/v79_im2.jpg",
+        "event": "Two people play volleyball so the two people to sweat"
+    },
+    {
+        "image_path": "images/validation/v79_im3.jpg",
+        "event": "Young women playing volleyball so they hit the volleyball back and forth over the net"
+    },
+    {
+        "image_path": "images/validation/v79_im3.jpg",
+        "event": "A game of women beach volleyball so everyone playing to get tired (because they are playing volleyball)"
+    },
+    {
+        "image_path": "images/validation/v79_im3.jpg",
+        "event": "Women are playing volleyball in the stand so a beach volleyball match"
+    },
+    {
+        "image_path": "images/validation/v79_im3.jpg",
+        "event": "Women are playing volleyball in the stand so a crowd to watch"
+    },
+    {
+        "image_path": "images/validation/v79_im3.jpg",
+        "event": "Women are playing volleyball in the stand so the woman to feel hot"
+    },
+    {
+        "image_path": "images/validation/v79_im4.jpg",
+        "event": "Beach volleyball so one team to win"
+    },
+    {
+        "image_path": "images/validation/v79_im4.jpg",
+        "event": "People are playing beach volleyball so a winner and a loser (because they are playing a game)"
+    },
+    {
+        "image_path": "images/validation/v79_im4.jpg",
+        "event": "Several people playing volleyball so a crowd to watch"
+    },
+    {
+        "image_path": "images/validation/v79_im4.jpg",
+        "event": "Several people playing volleyball so a team victory"
+    },
+    {
+        "image_path": "images/validation/v79_im4.jpg",
+        "event": "Several people playing volleyball so the people to have fun"
+    },
+    {
+        "image_path": "images/validation/v83_im2.jpg",
+        "event": "A guy cleaning his car window so the window to be cleaner"
+    },
+    {
+        "image_path": "images/validation/v83_im3.jpg",
+        "event": "A man takes snow from the car glass so the window to be clear"
+    },
+    {
+        "image_path": "images/validation/v83_im4.jpg",
+        "event": "A man taking snow off the car so the car to be cleared off and ready to drive"
+    },
+    {
+        "image_path": "images/validation/v83_im4.jpg",
+        "event": "A man is sweeping the snow off so the car is now ready to be driven"
+    },
+    {
+        "image_path": "images/validation/v84_im2.jpg",
+        "event": "He goes to show his talent so he tries knock down pins"
+    },
+    {
+        "image_path": "images/validation/v84_im2.jpg",
+        "event": "He goes to show his talent so the bowler to get a strike or spare"
+    },
+    {
+        "image_path": "images/validation/v85_im2.jpg",
+        "event": "Two kids having fun on a swing so the kids to smile"
+    },
+    {
+        "image_path": "images/validation/v85_im3.jpg",
+        "event": "A child on the swing so two kids having fun on a swing"
+    },
+    {
+        "image_path": "images/validation/v86_im2.jpg",
+        "event": "The girl is peeling potatoes so finish peeling potatoes"
+    },
+    {
+        "image_path": "images/validation/v87_im1.jpg",
+        "event": "A man is skating on snow so skiing down the hill or falling in the snow"
+    },
+    {
+        "image_path": "images/validation/v87_im1.jpg",
+        "event": "A man is skating on snow so people are having fun in the snow"
+    },
+    {
+        "image_path": "images/validation/v87_im2.jpg",
+        "event": "A label print on product details so people to know their product"
+    },
+    {
+        "image_path": "images/validation/v87_im3.jpg",
+        "event": "Woman and daughter taking a break from skiing so and they are happy"
+    },
+    {
+        "image_path": "images/validation/v87_im4.jpg",
+        "event": "Someone is snowboarding so snowboarders are having fun!"
+    },
+    {
+        "image_path": "images/validation/v88_im1.jpg",
+        "event": "Girls running race competition so a lot of people watching"
+    },
+    {
+        "image_path": "images/validation/v88_im1.jpg",
+        "event": "A female athlete is running in a race so cause her to become physically exhausted"
+    },
+    {
+        "image_path": "images/validation/v88_im1.jpg",
+        "event": "Triple jump so the spectators are excited"
+    },
+    {
+        "image_path": "images/validation/v88_im2.jpg",
+        "event": "Scores for women's long jump so a ranking list for women jumpers"
+    },
+    {
+        "image_path": "images/validation/v89_im1.jpg",
+        "event": "Female competitor in the discus event so discus to be thrown"
+    },
+    {
+        "image_path": "images/validation/v89_im3.jpg",
+        "event": "An athlete throws a weight so the weight to fly through the air and land"
+    },
+    {
+        "image_path": "images/validation/v89_im3.jpg",
+        "event": "An athlete throws a weight so the weight to land some distance away"
+    },
+    {
+        "image_path": "images/validation/v89_im3.jpg",
+        "event": "A girl practicing in the ground so the woman throws the discus"
+    },
+    {
+        "image_path": "images/validation/v89_im4.jpg",
+        "event": "Hammer throw so a hammer to be thrown"
+    },
+    {
+        "image_path": "images/validation/v90_im3.jpg",
+        "event": "A man and his dog enjoy their big yard so a happy mood for everyone"
+    },
+    {
+        "image_path": "images/validation/v93_im4.jpg",
+        "event": "A man helping a woman to Rollerblade so will prevent it from falling to the floor"
+    },
+    {
+        "image_path": "images/validation/v94_im1.jpg",
+        "event": "A woman are lawn, the garden so the lady is using a lawn mower"
+    },
+    {
+        "image_path": "images/validation/v94_im2.jpg",
+        "event": "A woman is mowing the lawn so a beautiful lawn"
+    },
+    {
+        "image_path": "images/validation/v94_im4.jpg",
+        "event": "A woman mowing the grass so the grass becomes shorter"
+    },
+    {
+        "image_path": "images/validation/v95_im1.jpg",
+        "event": "A lady windsurfing so a lady on water"
+    },
+    {
+        "image_path": "images/validation/v96_im3.jpg",
+        "event": "An athlete is mid air above a landing mat so the other girls to cheer"
+    },
+    {
+        "image_path": "images/validation/v96_im3.jpg",
+        "event": "A girl doing the high jump so she fall"
+    },
+    {
+        "image_path": "images/validation/v96_im3.jpg",
+        "event": "A girl doing the high jump so a girl jumping over a bar"
+    },
+    {
+        "image_path": "images/validation/v96_im4.jpg",
+        "event": "Girls are preparing for a high jump so so that they can successfully land onto the padding while going over a pole or stick"
+    },
+    {
+        "image_path": "images/validation/v97_im4.jpg",
+        "event": "Somebody washes their hands so clean hands"
+    },
+    {
+        "image_path": "images/validation/v98_im4.jpg",
+        "event": "Pan frying so the toast to become crispy"
+    },
+    {
+        "image_path": "images/validation/v99_im1.jpg",
+        "event": "A volleyball player after a game during an interview so questions to be asked and answered"
+    },
+    {
+        "image_path": "images/validation/v99_im2.jpg",
+        "event": "A classic contact sport so someone to get hurt"
+    },
+    {
+        "image_path": "images/validation/v99_im3.jpg",
+        "event": "Women's hockey match so one of the women hitting a ball"
+    },
+    {
+        "image_path": "images/validation/v99_im4.jpg",
+        "event": "The amperage announced the winner so cheers and excitement"
+    },
+    {
+        "image_path": "images/validation/v99_im4.jpg",
+        "event": "Runners preparing for a race with their coach so runners to train and run their race"
+    }
+]
